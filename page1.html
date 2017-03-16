@@ -1,0 +1,208 @@
+<html>
+	<head>
+		<title>MUN Cars</title>
+
+		<style>
+		
+			#main {
+				background-color:#ffffe6;
+				width:100%;
+				height:100%;
+			}
+			
+			#topBar {
+				height:50px;
+				width:100%;
+				background-color:#800000;
+				text-align:center;
+				float:left;
+			}
+			
+			#title {
+				color:#ffffe6;
+				font-size:40px;
+				font-family:Georgia, serif;
+				margin:3px 0 0 0;
+			}
+			
+			#rightPanel {
+				background-color:#D1D0CE;
+				width:690px;
+				margin:25px 20px 5px 5px;
+				float:right;
+				text-align:center;
+				border:5px solid;
+			}
+			
+			#findACar {
+				margin-top:15px;
+				color:black;
+				text-decoration:underline;
+			}
+			
+			#searchForm {
+				padding:0 0 0 15px;
+			}
+			
+			input {
+				margin:5px 5px 5px 5px;
+			}
+			
+			select {
+				width:150px;
+				margin:5px 5px 5px 5px;
+			}
+			
+			#submit {
+				width:175px;
+				margin:20px 0 0 75px;
+			}
+			
+			#leftPanel {
+				width:400px;
+				display: inline;
+				margin:20px 5px 5px 5px auto;
+				text-align:center;
+				float:left;
+			}
+			
+			#logo {
+				left:50px;
+				top:100px;
+				width:350px;
+				margin:0 0 0 40px;
+				position:absolute;
+			}
+			
+			#description {
+				padding:10px 20px 10px 20px;
+				text-align: justify;
+				margin:100px 5px 5px 75px;
+				float:left;
+			}
+			
+			#slogan {
+				left:400px;
+				top:300px;
+				width:400px;
+				position:absolute;
+				margin:35px 0 0 0;
+				font-weight:bold;
+			}
+			
+			.bold {
+				font-weight:bold;
+			}
+		
+		</style>
+	</head>
+	
+	<body>
+	
+		<script type="text/javascript">
+		
+			var cities = ["St. John's", "Halifax", "Montreal", "Toronto", "Ottawa", "Calgary", "Vancouver"];
+			var branches = [["Water Street", "Avalon Mall"],
+							["aaa", "bbb"],
+							["ccc", "ddd"],
+							["eee", "fff"],
+							["ggg", "hhh"],
+							["iii", "jjj"],
+							["kkk", "lll"]];
+		
+			window.onload = function load() {
+				for (var i = 0; i < cities.length; i++) {
+					var option = document.createElement("option");                
+					option.value=cities[i];
+					option.innerHTML=cities[i];
+					document.getElementById("citySelect").appendChild(option);
+				}
+				
+				for (var i = 0; i < branches[0].length; i++) {
+					var option = document.createElement("option");                
+					option.value=branches[0][i];
+					option.innerHTML=branches[0][i];
+					document.getElementById("branchSelect").appendChild(option);
+				}
+			}
+			
+			function onCityChange(){
+		
+				var select = document.getElementById("branchSelect");
+		
+				while(select.length > 0) {
+					select.remove(0);
+				}
+				
+				var j = document.getElementById("citySelect").selectedIndex;
+	
+				for (var i = 0; i < branches[j].length; i++) {
+					var option = document.createElement("option");                
+					option.value=branches[j][i];
+					option.innerHTML=branches[j][i];
+					select.appendChild(option);
+				}
+			}
+		</script>
+		
+		<div id="main">
+		
+			<div id="topBar">	
+				<h1 id="title">MUN Cars</h1>
+			</div>
+			
+			<div id="rightPanel">
+			
+				<h2 id="findACar">Find a Car Near You:</h2>
+	
+				<form id="searchForm">
+					<table>
+						<tr>
+							<th> City: </th>
+							<th> Branch: </th>
+							<th> Start Date: </th>
+							<th> End Date: </th>
+						</tr>
+						<tr>
+							<td> <select id="citySelect" onchange="onCityChange()"> </select> </td>
+							<td> <select id="branchSelect"> </select> </td>
+							<td> <input id="startDateSelect" type="date" value="YYYY-MM-DD"/> </td>
+							<td> <input id="endDateSelect" type="date" value="YYYY-MM-DD" /> </td>
+						</tr>
+						<tr id="submitRow"> 
+							<td> </td>
+							<td colspan=2> <input type="submit" value="Search" id="submit"/> </td> 
+						</tr>
+					</table>
+				</form>
+				
+			</div>
+			
+			<div id="leftPanel">
+		
+				<img src="logo.png" id="logo"/>
+			
+				<h2 id="slogan">Quality | Convenience | Reliability</h2>
+		
+			</div>
+			
+			<div id="bottomPanel">
+		
+				<p id="description">
+			
+					<span class="bold">MUN Cars</span> is a car 
+					rental service which has been in service 
+					for over a decade! We pride ourselves in having
+					the best prices you will find in any of the seven 
+					major Canadian cities we are located in.
+					Whether you're looking for a large truck
+					for a day or a small sedan for a month
+					we will have what your looking for!
+				
+				</p>
+			
+			</div>
+		
+		</div>
+	</body>
+</html>
