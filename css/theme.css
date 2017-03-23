@@ -1,5 +1,5 @@
 
-/* file: style.css */
+/* file: theme.css */
 body{
 	font-size: 1em;
 /*        background-image : url(../img/background.jpg);*/
@@ -11,113 +11,7 @@ body{
         
 }
 
-#tbl {
-  background: rgba(255,255,255,0.5);
-  padding: 10px;
-  border-radius: 5px;
-}
 
-#gap {
-    font-size : 40px;
-    font-family : Georgia, Serif;
-    color : white;
-    text-align : left;
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
-    background-color : maroon;
-}
-#menuBar {
-   background-color: #D1D0CE;
-   overflow: hidden;
-     width: auto;
-    height: 45px;
-    align-items: center;
-}
-
-#menuBar a {
-    float : left;
-    display : compact;
-    color: #800000;
-    width : 70px;
-    text-align : center;
-    padding: 14px 16px;
-    text-decoration : none;
-    font-size: 15px;
-}
-
-#menuBar a:hover {
-    	color: #fff;
-         background-color: #800000;
-}
-
-#menuBar a.active {
-    background-color: #333;
-    color: white;
-}
-
-#cars {
-    background-color: threeddarkshadow;
-    opacity : 0.8;
-    margin-left: 5%;
-    margin-bottom: 5%;
-    border: 10px;
-    width: 870px;
-    height: 800px;
-}
-
-#summary {
-/*    background-color: maroon;*/
-/*    opacity : 0.8;*/
-  
-    float : right;
-    height: 300px;
-    width : 20%;
-    margin-right : 5%;
-    margin-top : 1%;
-    margin-left : 1%;
-    background-color :#D1D0CE;
-    text-align : center;
-}
-
-
-
-td{
-	padding: 10px;
-}
-
-th{
-        background-color : maroon;
-	font-size: 1.5em;
-	color: maroon;
-	height: 50px;
-}
-
-a{
-	text-decoration: none;
-	color : maroon ;
-	font-weight: bold;
-}
-
-a:hover{
-	color: maroon;
-}
-
-#signup{
-	text-align: center;
-}
-
-#content {
-    text-align : center;
-}
-
-
-.title{
-  font-weight: bold;
-  padding: 2px;
-  background: #148dc3;
-  color: #fff;
-}
 
 #bar{
   width: 100%;
@@ -158,6 +52,7 @@ span.link > a:hover {
 span.right > a:hover {
 	color: #fff;
   background-color: #800000;
+  transition-duration : 0.5s;
 }
 
 span.header{
