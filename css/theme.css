@@ -4,9 +4,11 @@ body{
 	font-size: 1em;
 /*        background-image : url(../img/background.jpg);*/
         background-size: cover;
+        overflow : scroll;
 	font-family: Nirmala UI, serif;
 	margin: 0;
 	padding: 0;
+        
 }
 
 #tbl {
@@ -15,6 +17,71 @@ body{
   border-radius: 5px;
 }
 
+#gap {
+    font-size : 40px;
+    font-family : Georgia, Serif;
+    color : white;
+    text-align : left;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color : maroon;
+}
+#menuBar {
+   background-color: #D1D0CE;
+   overflow: hidden;
+     width: auto;
+    height: 45px;
+    align-items: center;
+}
+
+#menuBar a {
+    float : left;
+    display : compact;
+    color: #800000;
+    width : 70px;
+    text-align : center;
+    padding: 14px 16px;
+    text-decoration : none;
+    font-size: 15px;
+}
+
+#menuBar a:hover {
+    	color: #fff;
+         background-color: #800000;
+}
+
+#menuBar a.active {
+    background-color: #333;
+    color: white;
+}
+
+#cars {
+    background-color: threeddarkshadow;
+    opacity : 0.8;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    border: 10px;
+    width: 870px;
+    height: 800px;
+}
+
+#summary {
+/*    background-color: maroon;*/
+/*    opacity : 0.8;*/
+  
+    float : right;
+    height: 300px;
+    width : 20%;
+    margin-right : 5%;
+    margin-top : 1%;
+    margin-left : 1%;
+    background-color :#D1D0CE;
+    text-align : center;
+}
+
+
+
 td{
 	padding: 10px;
 }
@@ -22,13 +89,13 @@ td{
 th{
         background-color : maroon;
 	font-size: 1.5em;
-	color: black;
+	color: maroon;
 	height: 50px;
 }
 
 a{
 	text-decoration: none;
-	color : #800000 ;
+	color : maroon ;
 	font-weight: bold;
 }
 
@@ -40,11 +107,9 @@ a:hover{
 	text-align: center;
 }
 
-/*#container{
-  width: 70%;
-  margin-left: 17%;
-  margin-top: 5%;
-}*/
+#content {
+    text-align : center;
+}
 
 
 .title{
@@ -80,9 +145,8 @@ span.link > a {
 span.right > a{
     display : block;
     margin-right: 5px;
-    border: 1px solid #333;
     transition: 0.25s;
-    color: #333;
+    color: maroon;
     text-align: center;
     padding: 10px 15px;
 }
