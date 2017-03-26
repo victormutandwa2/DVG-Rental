@@ -1,0 +1,118 @@
+<!DOCTYPE html>	
+<html>
+<head>
+
+<title>Extras:</title>
+<link rel="stylesheet" type="text/css" href="theme.css">
+<style>
+h1{
+color:white;
+text-align:left;
+}
+</style>
+</head>
+
+<body>
+ <div id="bar">
+<span class="header"><a href="index.php"><img src="logo.jpg" alt="Logo" height="70"></a></span>
+<?php
+session_start();
+
+?>
+
+<p align="right">
+
+<input type="button" name="checkout" value="No thanks,Proceed to checkout"  href="Checkout-proj.html">
+<br>
+</div>
+</p>
+
+
+<center>
+<div id="bar1">
+<h1 text-color="white">Recommended extras</h1>
+</div>
+<div class="desc"> 
+<p>
+<table>
+	<tr>
+		<h3>Navigation System </h3>
+               <br>Duration:<br>
+               <form name="form1" method="POST">
+               <input type="Number" name="quant" min="1" max="20">
+      9         <br>	
+	               <b>$25/day</b>
+		</form>
+        <?php
+
+       if(isset($_POST["checkout"])){
+	 $_SESSION["var1"]=$_POST["quant"];
+          
+         ?>
+     <p>
+		<img src="C:\Users\Dr Vic\Documents\CS3715-Assignments W17\carRental\gps.jpg" height="200" width="200">	
+	</p>
+		Dont wanna get lost?<br>
+	    Stay on track with one of the best GPSs!
+	</tr>
+<tr>
+<h3>Car seat</h3>
+<p>
+<br><b>Quantity:</b><br>
+<form name="form2" method="POST" >
+<input type="Number" name="quant1" min="1" max="5">
+<br>
+</form>
+<img src="carseat.jpg" height="250" width="200">
+<br> <b>$45/seat</b>
+</p>
+
+   <?php
+
+     	if(isset($_POST["checkout"])){
+	 $_SESSION["var2"]=$_POST["quant1"];
+          
+     ?>
+
+
+
+This provides extra protection for children<br> under the age of 5.	
+</tr>
+<tr>
+<h3>Additional Driver</h3><br>
+<form name="form3"> 	
+ <input type="Number" name="quant2" min="1" max="5">
+ <br><b>$20/per driver.</b>
+</form>
+ <p>
+
+   <?php
+
+       	if(isset($_POST["checkout"])){
+	 $_SESSION["var3"]=$_POST["quant2"];
+          
+     ?>
+ <img src="keys.jpg" height="200" width="200">	
+ 
+ </p>
+
+ You can share the driving on<br>
+ long journeys and enjoy the peace <br>
+ of mind that someone else is insured<br>
+  to drive if needed.
+</tr>
+
+
+</table>	
+<div class="submitbutt">
+<p>
+<input type="button" name="checkout" value="Continue!" href="Checkout-proj.html" >
+<br>
+</p>
+</div>
+<div id="bar1">
+</div>
+</p>
+</center>
+</body>
+</html>
