@@ -2,13 +2,13 @@
 /* file: theme.css */
 body{
 	font-size: 1em;
-/*        background-image : url(../img/background.jpg);*/
-        background-size: cover;
-        overflow : scroll;
+	background-image : url("../img/background.jpg");
+	background-repeat:no-repeat;
+	background-size:contain;
+    overflow : scroll;
 	font-family: Nirmala UI, serif;
 	margin: 0;
 	padding: 0;
-        
 }
 
 
@@ -43,6 +43,7 @@ span.right > a{
     color: maroon;
     text-align: center;
     padding: 10px 15px;
+	text-decoration: none;
 }
 
 span.link > a:hover {
