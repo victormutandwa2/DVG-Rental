@@ -10,6 +10,7 @@ and open the template in the editor.
         <title> Select a vehicle </title>
          <link rel="stylesheet" type="text/css" href="css/theme.css" />
          <link rel="stylesheet" type="text/css" href="css/chooseVehicle.css"/>
+		 <script type="text/javascript" src="javascript/chooseVehicle.js"> </script>
 <!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
     </head>
     
