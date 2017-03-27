@@ -44,7 +44,7 @@
         
 		<div id="box" >
 		
-			<form action="chooseVehicle.php" method="post">
+			<form action="chooseVehicle.php" method="POST">
 				<div class="menuBar" >
 				<table>
 					<tr>
@@ -75,7 +75,7 @@
 						-->
 						<?php
                            if(isset($_POST["submit"])){
-							$_SESSION["var1S"]=$_POST["startDate"];
+							$_SESSION["var4"]=$_POST["startDate"];
 						   }
 						?>
 					</tr>
@@ -110,7 +110,7 @@
 						-->
 						<?php
                            if(isset($_POST["submit"])){
-						   $_SESSION["var2E"]=$_POST["endDate"];
+						   $_SESSION["var5"]=$_POST["endDate"];
 						   }
 							
 						?>
