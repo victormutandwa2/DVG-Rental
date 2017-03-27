@@ -39,11 +39,11 @@ include 'sqlSetup.php';
             <?php 
             $carQuery = mysqli_query($link,'SELECT model, type,year, img,ppd FROM cars WHERE branchID = "1"'); ?>
         
-              <div id="summary">          
+<!--              <div id="summary">          
                   <a> Rental Summary </a>
                   <li> </li>
                   
-            </div>
+            </div>-->
         
         <div id="cars" >
             
@@ -57,7 +57,7 @@ include 'sqlSetup.php';
          
          
             
-            <script src="javascript/clickableRow.js"></script>
+            <script type="text/javascript" src="javascript/clickableRow.js"></script>
             <table>
                <?php foreach ($carQuery as $cars): ?>
 
@@ -65,9 +65,13 @@ include 'sqlSetup.php';
                     <td> <a href="carModel"> <?php echo $cars['model']; ?>  </a>
                         <br> <?php echo $cars['year']; ?> </br></td>
                     <td> <a>   <?php echo $cars['type'];?> </a> </td>
+                    <td> <a> $<?php echo $cars['ppd']; ?> </a> </td>
                     
                     
                     <td>    
+                        <form>
+                            <input value="SUBMIT" type ="submit" style="float: right">
+                        </form>
                         <img src= "<?php echo $cars['img']; ?>" height="150" width ="200" />
                          </td>
                 </tr>

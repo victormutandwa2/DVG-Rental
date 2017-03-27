@@ -44,33 +44,57 @@
         
 		<div id="box" >
 		
-			<div id="menuBar" >
 			<form action="chooseVehicle.php" method="post">
+				<div class="menuBar" >
 				<table>
 					<tr>
+						<td class="label">Pick Up:</td>
 						<td> 			 
 						<div class="dropdown">
-							<input class="btn" id="btnCity" readOnly/>
-							<div class="list" id="cityList">
+							<input class="btn" id="btnCityPickup" name="cityPickup"readOnly/>
+							<div class="list" id="cityListPickup">
 
 							</div>
 						</div>
 						</td>
 						<td> 			 
 						<div class="dropdown">
-							<input class="btn" id="btnBranch" readOnly/>
-							<div class="list" id="branchList">
+							<input class="btn" id="btnBranchPickup" name="branchPickup" readOnly/>
+							<div class="list" id="branchListPickup">
 
 							</div>
 						</div>
 						</td>
-						<td> <input id="startDateSelect" type="date" class="btn" placeholder="YYYY-MM-DD (Start)"/> </td>
-						<td> <input id="endDateSelect" type="date" class="btn" placeholder="YYYY-MM-DD (End)"/> </td>
-						<td colspan=2> <input type="submit" value="Search" id="submit"/> </td> 
+						<td> <input id="startDateSelect" type="date" class="btn" name="startDate"/> </td>
+						<td colspan=2> <input type="submit" value="Search" id="submit" name="submit"/> </td> 	
 					</tr>
 				</table>
+				</div>
+				<div class="menuBar">
+				<table>
+					<tr>
+					<td class="label">&nbsp;Return:</td>
+						<td> 			 
+						<div class="dropdown">
+							<input class="btn" id="btnCityReturn" name="cityReturn" readOnly/>
+							<div class="list" id="cityListReturn">
+
+							</div>
+						</div>
+						</td>
+						<td>
+						<div class="dropdown">
+							<input class="btn" id="btnBranchReturn" name="branchReturn" readOnly/>
+							<div class="list" id="branchListReturn">
+
+							</div>
+						</div>
+						</td>
+						<td> <input id="endDateSelect" type="date" class="btn" name="endDate"/> </td>
+					</tr>
+				</table>
+				</div>
 			</form>	
-			</div>
 		</div>
 	</body>
 </html>
