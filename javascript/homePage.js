@@ -37,7 +37,6 @@ window.addEventListener('load', function() {
 					}
 				}
 				document.getElementById("branchListPickup").appendChild(branch);
-				document.getElementById("branchListReturn").appendChild(branch);
 			}
 		}
 		document.getElementById("cityListPickup").appendChild(city);
