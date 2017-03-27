@@ -36,7 +36,7 @@ div.button {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-  border-radius: 50%;
+   border-radius: 50%;
   
 }
 
@@ -58,14 +58,14 @@ div.button:active {
   box-shadow: 0 3px #666;
   transform: translateY(4px);
 }
-div.bar1.a:hover {background-color:grey
+div.bar1.a:hover {background-color:grey}
 
 div.bar1.a:active {
   background-color: grey;
   box-shadow: 0 3px #666;
   transform: translateY(4px);
 }
-}
+};
 
 </style>
 <link rel="stylesheet" type="text/css" href="theme.css">
@@ -137,10 +137,10 @@ Card Number:<br>
 <?php
 session_start();
 
-<!--
 
-$startDate1=$_SESSION["var1S"];
-$endDate1=$_SESSION["var2E"];
+
+$startDate1=$_SESSION["var4"];
+$endDate1=$_SESSION["var5"];
 
 
 $num_days=$endDate1-$startDate1;
@@ -157,7 +157,7 @@ $taxes=$extras*0.15+$rental_fee*0.15;
 $total_tax=$before_tax*1.15;
 
 echo " 
-<div class="cart">
+<div class='cart'>
 <table>
 <h3 >Cart:</h3>
 <tr>
@@ -183,7 +183,7 @@ Taxes(15%): $ $taxes <br>
 <div class="button" >
 <p>
 <form action="bill.php">
-<button type="submit"> Submit-></button>
+<button type="submit" align="center"> Submit-></button>
 </p>
 </form>
 </div>
