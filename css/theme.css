@@ -2,7 +2,7 @@
 /* file: theme.css */
 body{
 	font-size: 1em;
-	background-image : url("../img/background.jpg");
+/*	background-image : url("../img/background.jpg");*/
 	background-repeat:no-repeat;
 	background-size:contain;
     overflow : scroll;
@@ -10,6 +10,8 @@ body{
 	margin: 0;
 	padding: 0;
 }
+
+
 
 #bar{
   width: 100%;
