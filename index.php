@@ -65,8 +65,19 @@
 							</div>
 						</div>
 						</td>
+						
 						<td> <input id="startDateSelect" type="date" class="btn" name="startDate"/> </td>
 						<td colspan=2> <input type="submit" value="Search" id="submit" name="submit"/> </td> 	
+						
+						
+						<!--
+						Start date #PHP
+						-->
+						<?php
+                           if(isset($_POST["submit"])){
+							$_SESSION["var1S"]=$_POST["startDate"];
+						   }
+						?>
 					</tr>
 				</table>
 				</div>
@@ -77,7 +88,9 @@
 						<td> 			 
 						<div class="dropdown">
 							<input class="btn" id="btnCityReturn" name="cityReturn" readOnly/>
-							<div class="list" id="cityListReturn">
+				
+								
+								<div class="list" id="cityListReturn">
 
 							</div>
 						</div>
@@ -91,6 +104,17 @@
 						</div>
 						</td>
 						<td> <input id="endDateSelect" type="date" class="btn" name="endDate"/> </td>
+						<!--
+						END date #PHP
+
+						-->
+						<?php
+                           if(isset($_POST["submit"])){
+						   $_SESSION["var2E"]=$_POST["endDate"];
+						   }
+							
+						?>
+						
 					</tr>
 				</table>
 				</div>
