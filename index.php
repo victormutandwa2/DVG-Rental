@@ -1,3 +1,25 @@
+  <?php
+          $server = "mysql.cs.mun.ca";
+          $name = "cs3715w17_dfm672";
+          $password = "qQTgScX3";
+          $database = "cs3715w17_dfm672";
+            session_start();
+//            $server =  "localhost";
+//            $name = "root";
+//            $password = "";
+//            $database = "dvg";
+            
+            $link = new mysqli($server, $name, $password, $database);
+            
+            if ($link -> connect_error) 
+                {
+                die('Something went wrong while connecting to MSSQL');
+                }
+            
+  
+   
+            ?>
+        
 <html>
 	<head>
 		<title>DVG Rental</title>
@@ -10,12 +32,12 @@
 	
 	<body>
 
-		<div id="bar">
+	<div id="bar">
 			<span class="header"><a href="index.php"><img src=img/logo.jpg alt="Logo" height="70"></a></span>
-			<span class="right"><a href="registration.php">Sign Up</a></span>
-			<span class="right"><a href="index.php">Sign In</a></span>
-		</div>
-	
+			<span class="right"><a href="#NOTHING">Vehicles</a></span>
+			<span class="right"><a href="#NOTHING">Contact Us</a></span>
+
+	</div>
 		<div id="gap">     
 			Find A Vehicle     
 		</div>
