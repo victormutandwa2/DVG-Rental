@@ -138,12 +138,14 @@ Card Number:<br>
 session_start();
 
 <!--
-NB : num of days not calculated yet!!
-and price
+
+$startDate1=$_SESSION["var1S"];
+$endDate1=$_SESSION["var2E"];
 
 
+$num_days=$endDate1-$startDate1;
 $rental_fee=20*$num_days;
--->
+
 $quant=$_SESSION["var1"];
 $quant1=$_SESSION["var2"];
 $quant2=$_SESSION["var3"];
@@ -159,16 +161,16 @@ echo "
 <table>
 <h3 >Cart:</h3>
 <tr>
-Number of days:TBA
+Number of days: $num_days; 
 <br>
-Price/day:$ 20 
+Price/day: $ 20.00 
 </tr>
 <tr><br>
 
-Extras:$ $extras
+Extras: $ $extras
 </tr>
 <tr><br>
-Taxes(15%):$ $taxes <br>
+Taxes(15%): $ $taxes <br>
 <b>________________________</b>	
 </tr>
 <tr><br><b>TOTAL: $ $total_tax  </b></tr>
