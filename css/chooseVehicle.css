@@ -14,6 +14,17 @@ and open the template in the editor.
   border-radius: 5px;
 }
 
+#carBox {
+    float : right;
+    margin-left : 0%;
+    margin-top : 0%;
+    margin-bottom : 0%;
+    width : 830px;
+    height : 160px;
+    background-color : pink;
+    list-style-type : none;
+}
+
 #gap {
     font-size : 40px;
     font-family : Georgia, Serif;
@@ -62,6 +73,7 @@ and open the template in the editor.
     border: 10px;
     width: 870px;
     height: 800px;
+    overflow : scroll;
 }
 
 #summary {
@@ -78,17 +90,32 @@ and open the template in the editor.
     text-align : center;
 }
 
+/*tr {
+       height:100px;
 
+}*/
 
-td{
-	padding: 10px;
+table td{
+        width: 600px;
+        background-color: #999999;
+        align-items: center;
 }
 
-th{
+/*th{
         background-color : maroon;
 	font-size: 1.5em;
 	color: maroon;
 	height: 50px;
+}*/
+
+table tr {
+    background: #a7c942;
+}
+table tr:hover {
+    background: #89ae37;
+}
+table tr.alt:hover {
+    background: #eaf2d3;
 }
 
 a{
