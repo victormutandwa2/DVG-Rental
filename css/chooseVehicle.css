@@ -8,22 +8,13 @@ and open the template in the editor.
     Author     : Dido
 */
 
-#tbl {
-  background: rgba(255,255,255,0.5);
-  padding: 10px;
-  border-radius: 5px;
+table {
+/*  background: rgba(255,255,255,0.5);*/
+      
+
+
 }
 
-#carBox {
-    float : right;
-    margin-left : 0%;
-    margin-top : 0%;
-    margin-bottom : 0%;
-    width : 900px;
-    height : 160px;
-    background-color : pink;
-    list-style-type : none;
-}
 
 #gap {
     font-size : 40px;
@@ -67,10 +58,9 @@ and open the template in the editor.
 
 #cars {
     background-color: threeddarkshadow;
-    opacity : 0.8;
+/*    opacity : 0.8;*/
     margin-left: 5%;
     margin-bottom: 5%;
-    border: 10px;
     width: 90%;
     height: 800px;
     overflow : scroll;
@@ -90,33 +80,34 @@ and open the template in the editor.
     text-align : center;
 }
 
-/*tr {
-       height:100px;
 
-}*/
-
-table td{
-        width: 600px;
-        background-color: #999999;
-       text-align : center;
+.carBox{
+        background-color:#D1D0CE;
+	color:black;
+	font-weight:bold;
+        font-size: 16px;
+	
+	text-align:center;
+        border-left: 0px solid;
+        border-right: 0px solid;
+        cursor: pointer;
+        height:100px;
+  
+      
+      
 }
 
-/*th{
-        background-color : maroon;
-	font-size: 1.5em;
-	color: maroon;
-	height: 50px;
-}*/
+.carBox td {
+    width:800px;
+	height:150px;
+}
 
-table tr {
-    background: #a7c942;
+.carBox:hover {
+     background-color : rgba(255,255,255,0.5);
+        color : white;
 }
-table tr:hover {
-    background: #89ae37;
-}
-table tr.alt:hover {
-    background: #eaf2d3;
-}
+
+
 
 a{
 	text-decoration: none;
@@ -132,9 +123,6 @@ a:hover{
 	text-align: center;
 }
 
-#content {
-    text-align : center;
-}
 
 
 .title{
@@ -143,3 +131,4 @@ a:hover{
   background: #148dc3;
   color: #fff;
 }
+

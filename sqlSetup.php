@@ -3,7 +3,7 @@
           $name = "cs3715w17_dfm672";
           $password = "qQTgScX3";
           $database = "cs3715w17_dfm672";
-            session_start();
+//            session_start();
 //            $server =  "localhost";
 //            $name = "root";
 //            $password = "";
@@ -11,12 +11,7 @@
             
             $link = new mysqli($server, $name, $password, $database);
             
-            if ($link -> connect_error) 
-                {
-                die('Something went wrong while connecting to MSSQL');
-                }
-            
-            echo "Connected successfully";
+ 
 //            $queryCity = mysqli_query($link, 'SELECT city FROM branch');
 //            while($cityrow = mysqli_fetch_assoc($queryCity)) {
 //                $city[] = $cityrow["city"];

@@ -25,8 +25,9 @@ include 'sqlSetup.php';
     <body>
         <div id="bar">
 			<span class="header"><a href="index.php"><img src=img/logo.jpg alt="Logo" height="70"></a></span>
+                        <span class="right"><a href="#NOTHING">Contact Us</a></span>
 			<span class="right"><a href="NOTHING">Vehicles</a></span>
-			<span class="right"><a href="#NOTHING">Contact Us</a></span>
+			
                         <span class ="right"><a href="index.php">Home</a></span>
 
 	</div>
@@ -57,6 +58,7 @@ include 'sqlSetup.php';
          
          
             
+<<<<<<< HEAD
             <script src="javascript/clickableRow.js"></script>
             <table>
                <?php foreach ($carQuery as $cars): ?>
@@ -71,6 +73,31 @@ include 'sqlSetup.php';
                         <img src= "<?php echo $cars['img']; ?>" height="150" width ="200" />
                          </td>
                 </tr>
+=======
+
+            
+            <table>
+               <?php foreach ($carQuery as $cars): ?>
+                 
+                <tr class = "carBox" onclick="document.location='Checkout-proj.php';">
+                     <form method="POST" action="Checkout-proj.php">
+                      <input type="hidden" name="carID" value="carID">
+
+                    <td> <a href="Checkout-proj.php" name="carModel"> <?php echo $cars['model']; ?>  </a>
+                        
+                        <br><a name="year"> <?php echo $cars['year']; ?> </a> </br></td>
+                    <td> <a name="type">   <?php echo $cars['type'];?> </a> </td>
+                    <td> <a name="ppd"> $<?php echo $cars['ppd']; ?>/day </a> </td>                  
+                    
+                    <td>    
+                            <img type="image" src="<?php echo $cars['img']; ?>" height="150" width ="200"> 
+                     </td>
+                     </input>
+                 </form>
+                </tr>
+                     
+              
+>>>>>>> 05aa4a9d772a06343c3ad0037bf2d9e4bb809bbc
                      <?php endforeach; ?>
                
             </table>

@@ -65,11 +65,11 @@ div.bar1.a:active {
   box-shadow: 0 3px #666;
   transform: translateY(4px);
 }
-};
+
 
 </style>
-<link rel="stylesheet" type="text/css" href="theme.css">
- <link rel="stylesheet" type="text/css" href="css/chooseVehicle.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/chooseVehicle.css">
 </head>
 <body>
 <div id="bar">
@@ -135,24 +135,24 @@ Card Number:<br>
 </div>
 
 <?php
-session_start();
+//session_start();
+include 'sqlSetup.php';
 
+//
+//$startDate1=$_SESSION["var4"];
+//$endDate1=$_SESSION["var5"];
+//
+//
+//$num_days=$endDate1-$startDate1;
+$rental_fee=20*7;
+//
+//$quant=$_SESSION["var1"];
+//$quant1=$_SESSION["var2"];
+//$quant2=$_SESSION["var3"];
+//
 
-
-$startDate1=$_SESSION["var4"];
-$endDate1=$_SESSION["var5"];
-
-
-$num_days=$endDate1-$startDate1;
-$rental_fee=20*$num_days;
-
-$quant=$_SESSION["var1"];
-$quant1=$_SESSION["var2"];
-$quant2=$_SESSION["var3"];
-
-
-$extras=$quant*25+$quant1*45+$quant2*20;
-$before_tax=$extras+$rental_fee;
+$extras=1*25+1*45+1*20;
+$before_tax=0+$rental_fee;
 $taxes=$extras*0.15+$rental_fee*0.15;
 $total_tax=$before_tax*1.15;
 
@@ -161,7 +161,7 @@ echo "
 <table>
 <h3 >Cart:</h3>
 <tr>
-Number of days: $num_days; 
+Number of days: 7; 
 <br>
 Price/day: $ 20.00 
 </tr>
