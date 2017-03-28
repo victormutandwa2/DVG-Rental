@@ -8,23 +8,11 @@ author @Victor Mutandwa
 <html>
 <head>
 
-<title>Extras:</title>
-<link rel="stylesheet" type="text/css" href="theme.css">
+<title>Extras</title>
+<link rel="stylesheet" type="text/css" href="css/theme.css"/>
 <link rel="stylesheet" type="text/css" href="css/chooseVehicle.css"/>
-<style type="text/css">
 
-div.gap1{
-    font-size : 40px;
-    font-family : Georgia, Serif;
-    color : white;
-    text-align : left;
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
-    background-color : maroon;
-}
 
-</style>
 </head>
 
 <body>
@@ -34,18 +22,71 @@ div.gap1{
 						<span class="right"><a href="#NOTHING">Vehicles</a></span>								
 						<span class ="right"><a href="index.php">Home</a></span>
 </div>
-<?php
-session_start();
 
-?>
 
-<div class="gap1">
-Recommended extras
+<div id="gap">
+Recommended Extras
 
 </div>
-						<span class ="right"><a href="Checkout-proj.html"> No thanks,Proceed to checkout"</a></span>
-<center>
-<div class="desc"> 
+    
+    
+    
+<!--    <span class ="right"><a href="Checkout-proj.html"> No thanks,Proceed to checkout"</a></span>
+<center>-->
+        
+    <style> 
+        #box {
+    background-color: #D1D0CE;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    height: 800px;
+    overflow : scroll;
+        }
+        </style>
+    
+    
+    
+           <div id="box">          
+            
+            <table>
+    
+                 
+                <tr>
+                     <form method="POST" action="Checkout-proj.php">
+                         <td colspan="5" style="align-content:center;">  
+                      <input type="checkbox" name="navigation" value="navigation" style="float:right;">
+                      <label style="color: red; float: right;">Navigation</label>
+                         </td>
+                </tr>
+                <tr>
+                    <td style="align-content: center;">
+                      <input type="checkbox" name="childSeat" value="childSeat" style="float:right;">
+                      <label style="color: red; float: right;">Child Seat</label>
+                    </td>
+                             
+                </tr>
+                      
+<!--                    <td> <a href="Checkout-proj.php" name="carModel">  </a>
+                        
+                        <br><a name="year">  </a> </br></td>
+                    <td> <a name="type">  </a> </td>
+                    <td> <a name="ppd"> </a> </td>                  
+                    
+                    <td>    
+                            <img type="image" src="" height="150" width ="200"> 
+                     </td>
+                     </input>-->
+                 </form>
+                
+                   
+               
+            </table>
+                       
+        </div>
+    
+    
+<!--<div> 
 <p>
 <br>
 <table>
@@ -57,14 +98,9 @@ Recommended extras
                <br>	
 	               <b>$25/day</b>
 		</form>
-        <?php
 
-       if(isset($_POST["checkout"])){
-	 $_SESSION["var1"]=$_POST["quant"];
-          
-         ?>
      <p>
-		<img src="C:\Users\Dr Vic\Documents\CS3715-Assignments W17\carRental\gps.jpg" height="200" width="200">	
+		<img src="img\gps.jpg" height="200" width="200">	
 	</p>
 		Dont wanna get lost?<br>
 	    Stay on track with one of the best GPSs!
@@ -77,16 +113,10 @@ Recommended extras
 <input type="Number" name="quant1" min="1" max="5" value="0">
 <br>
 </form>
-<img src="carseat.jpg" height="250" width="200">
+<img src="img/carseat.jpg" height="250" width="200">
 <br> <b>$45/seat</b>
 </p>
 
-   <?php
-
-     	if(isset($_POST["checkout"])){
-	 $_SESSION["var2"]=$_POST["quant1"];
-          
-     ?>
 
 
 
@@ -100,13 +130,8 @@ This provides extra protection for children<br> under the age of 5.
 </form>
  <p>
 
-   <?php
 
-       	if(isset($_POST["checkout"])){
-	 $_SESSION["var3"]=$_POST["quant2"];
-          
-     ?>
- <img src="keys.jpg" height="200" width="200">	
+ <img src="img/keys.jpg" height="200" width="200">	
  
  </p>
 
@@ -118,7 +143,7 @@ This provides extra protection for children<br> under the age of 5.
 
 
 
-</table>	
+</table>	-->
 
 <br>
 <div class="submitbutt">
@@ -127,9 +152,8 @@ This provides extra protection for children<br> under the age of 5.
 </form>
 </div>
 
-<div id="bar1">
-</div>
 </p>
 </center>
 </body>
+
 </html>

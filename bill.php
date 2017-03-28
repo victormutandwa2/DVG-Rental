@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>Summary: </title>
-<link rel="stylesheet" type="text/css" href="theme.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
 <link rel="stylesheet" type="text/css" href="css/chooseVehicle.css"/>
 
 <style type="text/css">
@@ -52,9 +52,15 @@ We hope you enjoy doing business with us and will see you soon!
  
 </p>
 </div>
-<p>
+<p id="tick">
 <br>
-background-image: url(img/done.png);
+<style type="text/css"> 
+    .tick
+    {
+            background-image: url("img/done.png"); 
+
+    }
+    </style>
 </p>
 
 <div id="bar1">

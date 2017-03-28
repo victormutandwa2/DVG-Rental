@@ -27,8 +27,9 @@ include 'sqlSetup.php';
     <body>
         <div id="bar">
 			<span class="header"><a href="index.php"><img src=img/logo.jpg alt="Logo" height="70"></a></span>
+                        <span class="right"><a href="#NOTHING">Contact Us</a></span>
 			<span class="right"><a href="NOTHING">Vehicles</a></span>
-			<span class="right"><a href="#NOTHING">Contact Us</a></span>
+			
                         <span class ="right"><a href="index.php">Home</a></span>
 
 	</div>
@@ -59,27 +60,29 @@ include 'sqlSetup.php';
          
          
             
-            <script type="text/javascript" src="javascript/clickableRow.js"></script>
+
+            
             <table>
                <?php foreach ($carQuery as $cars): ?>
-                  <form method="POST" action="Extras.php">
-                <tr class = 'clickableRow'> 
-                    <td> <a href="carModel" name="carModel"> <?php echo $cars['model']; ?>  </a>
+                 
+                <tr class = "carBox" onclick="document.location='Checkout-proj.php';">
+                     <form method="POST" action="Checkout-proj.php">
+                      <input type="hidden" name="carID" value="carID">
+
+                    <td> <a href="Checkout-proj.php" name="carModel"> <?php echo $cars['model']; ?>  </a>
                         
                         <br><a name="year"> <?php echo $cars['year']; ?> </a> </br></td>
                     <td> <a name="type">   <?php echo $cars['type'];?> </a> </td>
-                    <td> <a name="ppd"> $<?php echo $cars['ppd']; ?> </a> </td>                  
+                    <td> <a name="ppd"> $<?php echo $cars['ppd']; ?>/day </a> </td>                  
                     
                     <td>    
-                      
-                            <input value="SELECT" type="submit"  style="float: right">
-                             <input type="hidden" name="carID" value="carID">
-
-                       
-                        <img src= "<?php echo $cars['img']; ?>" height="150" width ="200" />
+                            <img type="image" src="<?php echo $cars['img']; ?>" height="150" width ="200"> 
                      </td>
-                </tr>
+                     </input>
                  </form>
+                </tr>
+                     
+              
                      <?php endforeach; ?>
                
             </table>
