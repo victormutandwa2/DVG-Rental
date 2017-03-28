@@ -147,9 +147,12 @@ This provides extra protection for children<br> under the age of 5.
 
 <br>
 <div class="submitbutt">
-<form action="Checkout-proj.html">
+<form action="Checkout-proj.php">
 <input type="submit" name="checkout" value="Continue!">
 </form>
+</div>
+ <div id="bar1">
+
 </div>
 
 </p>
