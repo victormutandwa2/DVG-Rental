@@ -22,7 +22,13 @@ img{
 	 border-radius: 8px;
 }
 div.body1{margin-left:5%;}
-
+div.done{
+    background-image: url("img/done2.jpg");
+	background-position: center; 
+	 background-repeat: no-repeat;
+     background-attachment: fixed;
+ }
+	
 </style>
 </head>
 <body>
@@ -38,13 +44,13 @@ Summary:
 </div>
 
 <p>
-<img src="img/sumcar.jpg" height="200" width="1210" border="3" color="grey">
+<img src="sumcar.jpg" height="200" width="1200" border="3" color="grey">
 </p>
 <div class="body1">
 <p>
 <br><b>Order confirmed!</b><br>
 <br>
-Your Confirmation reference No.is <b>3747457</b><br>
+Your Confirmation reference No.is <b>00015</b><br>
 <br>
 A copy of the booking has been sent to your email<br> 
 
@@ -52,10 +58,10 @@ We hope you enjoy doing business with us and will see you soon!
  
 </p>
 </div>
-<p>
-<br>
-background-image: url(img/done.png);
-</p>
+
+<div class="done">
+
+</div>
 
 <div id="bar1">
 

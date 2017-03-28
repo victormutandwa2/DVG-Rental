@@ -4,7 +4,6 @@ author @Victor Mutandwa
 
 -->
 
-<!DOCTYPE html>	
 <html>
 <head>
 
@@ -61,7 +60,7 @@ Recommended extras
 
        if(isset($_POST["checkout"])){
 	 $_SESSION["var1"]=$_POST["quant"];
-          
+	   }
          ?>
      <p>
 		<img src="C:\Users\Dr Vic\Documents\CS3715-Assignments W17\carRental\gps.jpg" height="200" width="200">	
@@ -85,7 +84,7 @@ Recommended extras
 
      	if(isset($_POST["checkout"])){
 	 $_SESSION["var2"]=$_POST["quant1"];
-          
+		}          
      ?>
 
 

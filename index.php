@@ -120,5 +120,9 @@
 				</div>
 			</form>	
 		</div>
-	</body>
+		<div id="bar1">
+
+		</div>
+
+		</body>
 </html>

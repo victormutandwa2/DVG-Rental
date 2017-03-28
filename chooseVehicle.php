@@ -9,9 +9,8 @@ and open the template in the editor.
 include 'sqlSetup.php';
 //session_start();
 
-//$branch = $_POST['branchID'];
-    $branch = 1;
-    $type = "sedan";
+
+
 ?>
 
 <html>
@@ -21,7 +20,6 @@ include 'sqlSetup.php';
          <link rel="stylesheet" type="text/css" href="css/theme.css" />
          <link rel="stylesheet" type="text/css" href="css/chooseVehicle.css"/>
 <!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
-         <script src="javascript/btnAction.js" type="text/javascript"></script>
     </head>
     
     <body>
@@ -39,47 +37,40 @@ include 'sqlSetup.php';
             
         </div>
             <?php 
-            $carQuery = mysqli_query($link,"SELECT model, type,year, img,ppd FROM cars WHERE branchID = '$branch'"); ?>
+            $carQuery = mysqli_query($link,'SELECT model, type,year, img,ppd FROM cars WHERE branchID = "1"'); ?>
         
-<!--              <div id="summary">          
+              <div id="summary">          
                   <a> Rental Summary </a>
                   <li> </li>
                   
-            </div>-->
+            </div>
         
         <div id="cars" >
             
             <div id="menuBar" >
-            <a href=chooseVehicle.php id ="myBtn" value="All">All</a>           
-            <a href="#Sedan" id = "myBtn" value = "Sedan">Sedan</a>
-            <a href="#4x4" id = "myBtn" value = "SUV">SUV</a>
-            <a href="#Coupe" id = "myBtn" value = "Coupe">Coupe</a>
-            <a href="#Hatchback" id = "myBtn" value ="Hatchback">Hatchback</a>
+            <a href="#All">All</a>
+            <a href="#Sedan">Sedan</a>
+            <a href="#4x4">4X4</a>
+            <a href="#Coupe">Coupe</a>
+            <a href="#Hatchback">Hatchback</a>
             </div>
          
          
             
-            <script type="text/javascript" src="javascript/clickableRow.js"></script>
+            <script src="javascript/clickableRow.js"></script>
             <table>
                <?php foreach ($carQuery as $cars): ?>
-                  <form method="POST" action="Extras.php">
+
                 <tr class = 'clickableRow'> 
-                    <td> <a href="carModel" name="carModel"> <?php echo $cars['model']; ?>  </a>
-                        
-                        <br><a name="year"> <?php echo $cars['year']; ?> </a> </br></td>
-                    <td> <a name="type">   <?php echo $cars['type'];?> </a> </td>
-                    <td> <a name="ppd"> $<?php echo $cars['ppd']; ?> </a> </td>                  
+                    <td> <a href="carModel"> <?php echo $cars['model']; ?>  </a>
+                        <br> <?php echo $cars['year']; ?> </br></td>
+                    <td> <a>   <?php echo $cars['type'];?> </a> </td>
+                    
                     
                     <td>    
-                      
-                            <input value="SELECT" type="submit"  style="float: right">
-                             <input type="hidden" name="carID" value="carID">
-
-                       
                         <img src= "<?php echo $cars['img']; ?>" height="150" width ="200" />
-                     </td>
+                         </td>
                 </tr>
-                 </form>
                      <?php endforeach; ?>
                
             </table>
@@ -95,5 +86,9 @@ include 'sqlSetup.php';
         // put your code her
         // 
         ?>
-    </body>
+<div id="bar1">
+
+</div>
+
+		</body>
 </html>
