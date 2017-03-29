@@ -3,7 +3,6 @@
           $name = "cs3715w17_dfm672";
           $password = "qQTgScX3";
           $database = "cs3715w17_dfm672";
-//            session_start();
 //            $server =  "localhost";
 //            $name = "root";
 //            $password = "";

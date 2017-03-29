@@ -4,42 +4,44 @@
 	<title>Checkout:</title>
 <style type="text/css">
 
-	div.cart {
+div.cart {
 
 	position: absolute;
-	top:180px;
+	top:190px;
 	right:70px;
-	height: 300px;
+	height: 250px;
 	width: 20%;
-	font-size:20px;
-    color:maroon;	 
-    vertical-align: text-top;
+	font-size:18px;
+        color:maroon;	 
+        vertical-align: text-top;
+        text-align : center;
 	background-color: #D1D0CE;
 }
 
-div.two{
-margin-left:70px;
+.box{
+        background-color:#D1D0CE;
+	color:black;
+	font-weight:bold;
+        font-size: 16px;
+        width: 68%;
+        list-style-type : none;
+        margin-left:5%;
+        margin-bottom: 5%;
+        height: 800px;
+        overflow: scroll;
+            
+}
+.two {
+    text-align: left;
+    margin-left: 5%;
+}
 
-}
-div.three{
-margin-left:70px;
+
+.three {
+    text-align: left;
+    margin-left: 5%;
 }
 
-div.button {
-   background-color: #4CAF50; 
-   border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-   border-radius: 50%;
-   margin-left:45%;
-  
-}
 
 div.gap1 {
     font-size : 40px;
@@ -52,13 +54,29 @@ div.gap1 {
     background-color : maroon;
 }
 
-div.button:hover {background-color: #3e8e41}
-
-div.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 3px #666;
-  transform: translateY(4px);
+#button {
+	background-color: #666;
+        color:white;
+        text-decoration : none;
+        font-size: 18px;
+        cursor: pointer;
+	width:200px;
+	height:40px;
+	text-align:center;
+	margin-left:10px;
+        position: absolute;
+	top:450px;
+	right:110px;
 }
+
+#button:hover {
+        background-color: maroon;
+        color:white;
+	transition-duration: 0.5s;
+}
+
+
+
 div.bar1.a:hover {background-color:grey}
 
 div.bar1.a:active {
@@ -83,10 +101,10 @@ div.bar1.a:active {
 </div>
 
 <div class="gap1">
-		Place your order!
+		Enter Your Information
 </div>
 
-
+    <div class="box">
 <div class="two">
 <h2>1.Driver Details:</h2>
 <form action="bill.php" method="POST">
@@ -134,7 +152,7 @@ Card Number:<br>
 <br>
 </form>
 </div>
-
+</div>
 <?php
 //session_start();
 include 'sqlSetup.php';
@@ -181,10 +199,11 @@ Taxes(15%): $ $taxes <br>
 ?>
 
 
-<div class="button" >
+<div>
 <p>
 <form action="bill.php">
-<button type="submit" align="center"> SUBMIT</button>
+<input id="button" type="submit" value="Book" action="saveReservation.php" > 
+
 </p>
 </form>
 </div>
