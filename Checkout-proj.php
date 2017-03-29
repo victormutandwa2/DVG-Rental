@@ -37,6 +37,7 @@ div.button {
     margin: 4px 2px;
     cursor: pointer;
    border-radius: 50%;
+   margin-left:45%;
   
 }
 
@@ -183,13 +184,15 @@ Taxes(15%): $ $taxes <br>
 <div class="button" >
 <p>
 <form action="bill.php">
-<button type="submit" align="center"> Submit-></button>
+<button type="submit" align="center"> SUBMIT</button>
 </p>
 </form>
 </div>
-
+<br>
+<a href="Extras.php"align="left" text-color="grey"> BACK</a>
+<br>
 <div id="bar1">
-<a href="Extras.php"align="left" text-color="white"> BACK</a>
+
 </div>
 
 

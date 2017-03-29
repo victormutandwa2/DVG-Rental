@@ -24,7 +24,7 @@ img{
 div.body1{margin-left:5%;}
 div.done{
     background-image: url("img/done2.jpg");
-	background-position: center; 
+	 background-position: center; 
 	 background-repeat: no-repeat;
      background-attachment: fixed;
  }
@@ -44,7 +44,7 @@ Summary:
 </div>
 
 <p>
-<img src="sumcar.jpg" height="200" width="1200" border="3" color="grey">
+<img src="img/sumcar.jpg" height="200" width="1200" border="3" color="grey">
 </p>
 <div class="body1">
 <p>
@@ -58,24 +58,14 @@ We hope you enjoy doing business with us and will see you soon!
  
 </p>
 </div>
-<<<<<<< HEAD
 
 <div class="done">
 
 </div>
-=======
-<p id="tick">
+
+
+<a href="Checkout-proj.php"align="left" text-color="white"> BACK</a>
 <br>
-<style type="text/css"> 
-    .tick
-    {
-            background-image: url("img/done.png"); 
-
-    }
-    </style>
-</p>
->>>>>>> 05aa4a9d772a06343c3ad0037bf2d9e4bb809bbc
-
 <div id="bar1">
 
 </div>
