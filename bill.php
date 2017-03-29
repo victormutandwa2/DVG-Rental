@@ -33,8 +33,8 @@ div.done{
 <body>
  <div id="bar">
 <span class="header"><a href="index.php"><img src="img/logo.jpg" alt="Logo" height="70"></a></span>
-						<span class="right"><a href="#NOTHING">Contact Us</a></span>
-						<span class="right"><a href="#NOTHING">Vehicles</a></span>								
+						<span class="right"><a href="contact.php">Contact Us</a></span>
+														
 						<span class ="right"><a href="index.php">Home</a></span>
 </div>
 
