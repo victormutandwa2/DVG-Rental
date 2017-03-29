@@ -5,10 +5,10 @@ body{
 /*	background-image : url("../img/background.jpg");*/
 	background-repeat:no-repeat;
 	background-size:contain;
-    overflow : scroll;
+        overflow : scroll;
 	font-family: Nirmala UI, serif;
-	margin: 0;
-	padding: 0;
+	
+        font-weight : bold;
 }
 
 
@@ -19,6 +19,7 @@ body{
   background : #D1D0CE;
   padding-top: 10px;
   padding-bottom: 10px;
+  
 }
 
 #bar1{
