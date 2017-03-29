@@ -7,22 +7,32 @@ and open the template in the editor.
 <?php
 //
 include 'sqlSetup.php';
-////session_start();
 //
 ////$branch = $_POST['branchID'];
-    $branch = 1;
-//    $type = "sedan";
-//?>
+    $branchLoc = $_POST["branchPickup"];
+    
+    $branchQ = mysqli_query($link, "SELECT branchID FROM branch WHERE streetaddress='$branchLoc'");
+    while ($id = $branchQ) {
+        $branch = $id;
+    }
+    
+    
+    $startDate = $_POST["startDate"];
+    $endDate = $_POST["endDate"];
+    print_r($branch);
+    "<br>";
+    print_r($endDate);
+    //    $type = "sedan";
+?>
 
 <html>
     <head>
         <meta charset="UTF-8">
         <title> Select a vehicle </title>
-                        <meta name="viewport" content="width=device-width, initial-scale=1">
-
+          <meta name="viewport" content="width=device-width, initial-scale=1">
          <link rel="stylesheet" type="text/css" href="css/theme.css" />
          <link rel="stylesheet" type="text/css" href="css/chooseVehicle.css"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
     </head>
     
     <body>
@@ -32,8 +42,7 @@ include 'sqlSetup.php';
         <div id="bar">
 			<span class="header"><a href="index.php"><img src=img/logo.jpg alt="Logo" height="70"></a></span>
                         <span class="right"><a href="#NOTHING">Contact Us</a></span>
-			
-                        <span class ="right"><a href="index.php">Home</a></span>
+			   <span class ="right"><a href="index.php">Home</a></span>
 
 	</div>
         
@@ -50,17 +59,17 @@ include 'sqlSetup.php';
             </div>-->
         
         
-            
+<!--            
  <script type="text/javascript">
-   function showCarType(type) 
+   function showCarType() 
     {
         $.ajax({
-            url: "localhost/DVG-Rental/getCar.php",
-            type: "POST",
+            url: "",
+            type: "",
             data: { 'type': type},                   
             success: function()
                         {
-                            alert("ok");                                    
+                            alert("Success");                                    
                         }
         });
     }
@@ -68,29 +77,26 @@ include 'sqlSetup.php';
     success: function(data){
    alert(data); // this will print you any php / mysql error as an alert                                    
 }
-</script>
+</script>-->
 
         <div id="cars" >
            
             <div id="menuBar" >
        
-
-                      
-            <form id="getCar">
-             <input type="submit" name="type" id = "myBtn" value ="All" onchange="showCarType(this.value)"></input>
-              <input type="submit" name="type" id = "myBtn" value ="Sedan" onchange="showCarType(this.value)"></input>
-               <input type="submit" name="type" id = "myBtn" value ="SUV" onchange="showCarType(this.value)"></input>
-                <input type="submit" name="type" id = "myBtn" value ="Coupe" onchange="showCarType(this.value)"></input>
-                <input type="submit" name="type" id = "myBtn" value ="Hatchback" onchange="showCarType(this.value)"></input>
-                
+                   
+            <form>
+             <input type="submit" name="type" id = "myBtn" value ="All"></input>
+              <input type="submit" name="type" id = "myBtn" value ="Sedan" ></input>
+               <input type="submit" name="type" id = "myBtn" value ="SUV"></input>
+                <input type="submit" name="type" id = "myBtn" value ="Coupe"></input>
+                <input type="submit" name="type" id = "myBtn" value ="Hatchback"></input>              
             </form>
                 
-
-            </div>
+            </div>          
          <?php 
                 
             if ($_GET['type'] == "" || $_GET['type'] == "All") {                                      
-                $carQuery = mysqli_query($link,"SELECT model, type,year, img,ppd FROM cars WHERE branchID='$branch'");
+                $carQuery = mysqli_query($link,"SELECT model, type,year, img,ppd FROM cars WHERE branch='$branch'");
             }
             else {
                 $type = $_GET['type'];
@@ -106,10 +112,10 @@ include 'sqlSetup.php';
                <?php foreach ($carQuery as $cars): ?>
                  
                 <tr class = "carBox" onclick="document.location='Extras.php';">
-                     <form method="POST" action="Checkout-proj.php">
+                     <form method="POST" action="Extras.php">
                       <input type="hidden" name="carID" value="carID">
 
-                    <td> <a href="Checkout-proj.php" name="carModel"> <?php echo $cars['model']; ?>  </a>
+                    <td> <a href="Extras.php" name="carModel"> <?php echo $cars['model']; ?>  </a>
                         
                         <br><a name="year"> <?php echo $cars['year']; ?> </a> </br></td>
                     <td> <a name="type">   <?php echo $cars['type'];?> </a> </td>
@@ -119,6 +125,7 @@ include 'sqlSetup.php';
                             <img type="image" src="<?php echo $cars['img']; ?>" height="150" width ="200"> 
                      </td>
                      </input>
+                     </form>
                  
                 </tr>
                      
