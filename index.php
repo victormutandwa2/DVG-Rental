@@ -1,54 +1,78 @@
-  <?php
-  
-    include 'sqlSetup.php';
-    session_start();
-    $cityQ = 'SELECT DISTINCT(city) FROM branch';
-       $branchQ = 'SELECT streetaddress FROM branch';
+<?php
+	$server = "mysql.cs.mun.ca";
+	$name = "cs3715w17_dfm672";
+	$password = "qQTgScX3";
+	$database = "cs3715w17_dfm672";
+	session_start();
+            
+	$link = new mysqli($server, $name, $password, $database);
+	$queryCity = mysqli_query($link, 'SELECT DISTINCT city FROM branch');
+	
+	while($cityrow = mysqli_fetch_assoc($queryCity)) {
+		$city[] = $cityrow["city"];
+	}
+		
+	$js_cities = json_encode($city);
+	print_r($js_cities);
+?>
 
-   $queryCity = mysqli_query($link, $cityQ);
-   $queryBranch = mysqli_query($link, $branchQ);
-
-   $arrayC = array();
-   $arrayB = array();
-
-
-   while ($row = mysqli_fetch_array($queryCity)) {
-       $arrayC[] = $row['city'];
-   }
-   
-//   while ($row1 = mysqli_fetch_array($queryBranch)) {
-       for ($init = 0; $init < count($arrayC); $init++) {
-           
-           $query = "SELECT streetAddress FROM branch WHERE city='$arrayC[$init]'";
-           $queryResult = mysqli_query($link, $query);
-           
-           while ($row2 = mysqli_fetch_array($queryResult)) {
-                      $arrayB[] = array($arrayC[$init] => $row2['streetAddress']);
-           }
-           
-//           $arrayB[] = $row1[array($queryResult)];
-       }
-//       $arrayB[] = $row1['streetaddress'];
-//   }
-//   print_r($arrayB);
-//  print_r(count($arrayC));
-   
-   ?>
 <html>
 	<head>
 		<title>DVG Rental</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/theme.css" />
 		<link rel="stylesheet" type="text/css" href="css/homePage.css" />
-		<script type="text/javascript" src="javascript/homePage.js"> 
-                        //                    <?php 
-//                    $js_cities = json_encode($arrayC);
-//                    $js_branches = json_encode($arrayB);
-//                    
-//                    echo "var cities = ". $js_cities.";";
-//                    echo "var branches = ". $js_branches.";"; ?>//
-//                    
-                </script>
+ 
+		<script type="text/javascript">		
+			
+			var cities= "<?php echo $js_cities ;?>";
+
+			var branches = [["Water Street", "Avalon Mall"],
+				["Beaufort Ave"],
+				["Rue Saint-Patrick", "Avenue des Pilage"],
+				["Lower Jarvis Street", "Caledonia Drive", "Victoria Park Ave"],
+				["Byward Market"],
+				["Burbank Rd SE"],
+				["Oak Street", "Renfrew Street"]];
+		
+
+			window.addEventListener('load', function() {
+				document.getElementById("btnCity").value=cities[0];
+				document.getElementById("btnBranch").value=branches[0][0];
+				document.getElementById("startDateSelect").valueAsDate=new Date();
+				document.getElementById("endDateSelect").valueAsDate=new Date();
+
+				for (var i = 0; i < 3; i++) {
+					var city = document.createElement("a");                
+					city.innerHTML=cities[i];
+					city.onclick = function(event) {
+					var city2 = event.target.innerHTML;
+					document.getElementById("btnCity").value=city2;
+					document.getElementById("btnBranch").value=branches[cities.indexOf(city2)][0];
+					document.getElementById("branchList").innerHTML="";
+			
+					for (var i = 0; i < branches[cities.indexOf(city2)].length; i++) {
+						var branch = document.createElement("a");                
+						branch.innerHTML=branches[cities.indexOf(city2)][i];
+						branch.onclick = function(event) {
+						var branch2 = event.target.innerHTML;
+						document.getElementById("btnBranch").value=branch2;
+					}
+				document.getElementById("branchList").appendChild(branch);
+			}
+		}
+		document.getElementById("cityList").appendChild(city);
+	}
+});
+
+			
+
+		
+
+		
+		</script> 
+
+		
 		
 	</head>
 	
@@ -71,27 +95,26 @@
 				<div class="menuBar" >
 				<table>
 					<tr>
-						<td class="label">Pick Up:</td>
+						<td class="label">Location:</td>
 						<td> 			 
 						<div class="dropdown">
-							<input class="btn" id="btnCityPickup" name="cityPickup"readOnly/>
-							<div class="list" id="cityListPickup">
+							<input class="btn" id="btnCity" name="city"readOnly/>
+							<div class="list" id="cityList">
 
 							</div>
 						</div>
 						</td>
 						<td> 			 
 						<div class="dropdown">
-							<input class="btn" id="btnBranchPickup" name="branchPickup" readOnly/>
-							<div class="list" id="branchListPickup">
+							<input class="btn" id="btnBranch" name="branch" readOnly/>
+							<div class="list" id="branchList">
 
 							</div>
 						</div>
 						</td>
 						
+						<td class="label">Pickup/Return:</td>
 						<td> <input id="startDateSelect" type="date" class="btn" name="startDate"/> </td>
-						<td colspan=2> <input type="submit" value="Search" id="submit" name="submit"/> </td> 	
-						
 						
 						<!--
 						Start date #PHP
@@ -101,32 +124,8 @@
 							$_SESSION["var4"]=$_POST["startDate"];
 						   }
 						?>
-					</tr>
-				</table>
-				</div>
-				<div class="menuBar">
-				<table>
-					<tr>
-					<td class="label">&nbsp;Return:</td>
-						<td> 			 
-						<div class="dropdown">
-							<input class="btn" id="btnCityReturn" name="cityReturn" readOnly/>
-				
-								
-								<div class="list" id="cityListReturn">
-
-							</div>
-						</div>
-						</td>
-						<td>
-						<div class="dropdown">
-							<input class="btn" id="btnBranchReturn" name="branchReturn" readOnly/>
-							<div class="list" id="branchListReturn">
-
-							</div>
-						</div>
-						</td>
-						<td> <input id="endDateSelect" type="date" class="btn" name="endDate"/> </td>
+						
+								<td> <input id="endDateSelect" type="date" class="btn" name="endDate"/> </td>
 						<!--
 						END date #PHP
 
@@ -135,17 +134,13 @@
                            if(isset($_POST["submit"])){
 						   $_SESSION["var5"]=$_POST["endDate"];
 						   }
-							
 						?>
 						
+						<td colspan=2> <input type="submit" value="Search" id="submit" name="submit"/> </td> 	
 					</tr>
 				</table>
 				</div>
 			</form>	
 		</div>
-		<div id="bar1">
-
-		</div>
-
 		</body>
 </html>
