@@ -22,8 +22,7 @@ include 'sqlSetup.php';
 
          <link rel="stylesheet" type="text/css" href="css/theme.css" />
          <link rel="stylesheet" type="text/css" href="css/chooseVehicle.css"/>
-<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
-         <script src="javascript/btnAction.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     </head>
     
     <body>
@@ -43,28 +42,65 @@ include 'sqlSetup.php';
           Choose Vehicle
             
         </div>
-            <?php 
-            $carQuery = mysqli_query($link,"SELECT model, type,year, img,ppd FROM cars WHERE branchID = '$branch'"); ?>
-        
+           
 <!--              <div id="summary">          
                   <a> Rental Summary </a>
                   <li> </li>
                   
             </div>-->
         
-        <div id="cars" >
+        
             
-            <div id="menuBar" >
-            <a href=chooseVehicle.php id ="myBtn" value="All">All</a>           
-            <a href="#Sedan" id = "myBtn" value = "Sedan">Sedan</a>
-            <a href="#4x4" id = "myBtn" value = "SUV">SUV</a>
-            <a href="#Coupe" id = "myBtn" value = "Coupe">Coupe</a>
-            <a href="#Hatchback" id = "myBtn" value ="Hatchback">Hatchback</a>
-            </div>
-         
-         
-            
+ <script type="text/javascript">
+   function showCarType(type) 
+    {
+        $.ajax({
+            url: "localhost/DVG-Rental/getCar.php",
+            type: "POST",
+            data: { 'type': type},                   
+            success: function()
+                        {
+                            alert("ok");                                    
+                        }
+        });
+    }
+    
+    success: function(data){
+   alert(data); // this will print you any php / mysql error as an alert                                    
+}
+</script>
 
+        <div id="cars" >
+           
+            <div id="menuBar" >
+       
+
+                      
+            <form id="getCar">
+             <input type="submit" name="type" id = "myBtn" value ="All" onchange="showCarType(this.value)"></input>
+              <input type="submit" name="type" id = "myBtn" value ="Sedan" onchange="showCarType(this.value)"></input>
+               <input type="submit" name="type" id = "myBtn" value ="SUV" onchange="showCarType(this.value)"></input>
+                <input type="submit" name="type" id = "myBtn" value ="Coupe" onchange="showCarType(this.value)"></input>
+                <input type="submit" name="type" id = "myBtn" value ="Hatchback" onchange="showCarType(this.value)"></input>
+                
+            </form>
+                
+
+            </div>
+         <?php 
+                
+            if ($_GET['type'] == "" || $_GET['type'] == "All") {                                      
+                $carQuery = mysqli_query($link,"SELECT model, type,year, img,ppd FROM cars WHERE branchID='$branch'");
+            }
+            else {
+                $type = $_GET['type'];
+                $carQuery = mysqli_query($link,"SELECT model, type,year, img,ppd FROM cars WHERE branchID='$branch' AND type='$type'");
+            }
+            
+            ?>
+
+         
+        
             
             <table>
                <?php foreach ($carQuery as $cars): ?>
@@ -83,7 +119,7 @@ include 'sqlSetup.php';
                             <img type="image" src="<?php echo $cars['img']; ?>" height="150" width ="200"> 
                      </td>
                      </input>
-                 </form>
+                 
                 </tr>
                      
               
@@ -94,7 +130,7 @@ include 'sqlSetup.php';
         </div>
        
       
-                <div id="bar1">
+        <div id="bar1">
             
         </div>
       

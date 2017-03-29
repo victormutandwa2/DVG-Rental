@@ -23,7 +23,7 @@
            $queryResult = mysqli_query($link, $query);
            
            while ($row2 = mysqli_fetch_array($queryResult)) {
-                      $arrayB[][] = array($arrayC[$init] => $row2['streetAddress']);
+                      $arrayB[] = array($arrayC[$init] => $row2['streetAddress']);
            }
            
 //           $arrayB[] = $row1[array($queryResult)];
@@ -67,7 +67,7 @@
         
 		<div id="box" >
 		
-			<form action="chooseVehicle.php" method="POST">
+			<form action="chooseVehicle.php?type=All" method="POST">
 				<div class="menuBar" >
 				<table>
 					<tr>
