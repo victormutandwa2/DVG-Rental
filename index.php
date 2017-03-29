@@ -1,6 +1,7 @@
   <?php
   
     include 'sqlSetup.php';
+    session_start();
     $cityQ = 'SELECT DISTINCT(city) FROM branch';
        $branchQ = 'SELECT streetaddress FROM branch';
 
