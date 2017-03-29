@@ -22,11 +22,10 @@ img{
 	 border-radius: 8px;
 }
 div.body1{margin-left:5%;}
+
 div.done{
-    background-image: url("img/done2.jpg");
-	 background-position: center; 
-	 background-repeat: no-repeat;
-     background-attachment: fixed;
+    margin-left:70%;
+
  }
 	
 </style>
@@ -44,7 +43,7 @@ Summary:
 </div>
 
 <p>
-<img src="img/sumcar.jpg" height="200" width="1200" border="3" color="grey">
+<img src="img/city.jpg" height="200" width="1200" border="3" color="grey">
 </p>
 <div class="body1">
 <p>
@@ -56,16 +55,18 @@ A copy of the booking has been sent to your email<br>
 
 We hope you enjoy doing business with us and will see you soon!
  
+ 
+ <div class="done">
+<img src="done2.jpg" height="100" width="100">
+
+</div>
 </p>
-</div>
-
-<div class="done">
 
 </div>
 
 
-<a href="Checkout-proj.php"align="left" text-color="white"> BACK</a>
-<br>
+
+
 <div id="bar1">
 
 </div>
