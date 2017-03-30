@@ -32,8 +32,13 @@
         $cardNo = $_POST['cardNo'];
         $expiryDate = $_POST['expiryDate'];
         
-       
-
+        $startDate = $_POST['startDate'];
+        $endDate = $_POST['endDate'];
+        $carID = $_POST['carID'];
+        $branchID = $_POST['branchID'];
+        $totalPrice = $_POST['totalPrice'];
+        
+        
 	
         $sql = "INSERT INTO customer (customerID, firstName, lastName, DOB, email, phone, address, cardNo, expiryDate) 
                 VALUES (NULL, '$fname', '$lname',  '$dob', '$mail', '$num', '$address', '$cardNo', '$expiryDate')";
@@ -41,9 +46,13 @@
 	// if update is successful then return true
 	if($query)
 	{
-        $customerIDQ = "SELECT customerID from customer where firstName='$fname' AND firstName='$lname'";
+        $customerIDQ = "SELECT customerID from customer where firstName='$fname' AND firstName='$lname'";       
         $customerID = mysqli_fetch_row($customerIDQ);
         $custID = $customerID['customerID'];
+        
+        $reservationQuery = "INSERT into reservation (reservationID, carID, branchID, startDate, endDate, totalPrice) 
+                VALUES (NULL, '$carID', '$branchID', '$startDate', '$endDate', '$totalPrice')";
+                    
         
         $idQ = "SELECT resID from reservation where customerID='$custID'";
         $id = mysqli_fetch_row($idQ);
