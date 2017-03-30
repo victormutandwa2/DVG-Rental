@@ -42,22 +42,21 @@ Recommended Extras
 
 	  include 'sqlSetup.php';
 
+           $startDate1=$_POST["startDate"];
+           $endDate1=$_POST["endDate"];
+	
+	   
+		$type_of_car=$_POST["ppd"];
 
-     
-		$type_of_car=$_SESSION["var3"];
-		
-		if ($type_of_car == "Sedan"){
-		$car_price=20;
-	}
-		else if($type_of_car=="HatchBack"){
-		$car_price=15;
-		}
-		else if($type_of_car=="SUV"){
-		$car_price=25;
-	}
 	
 	$extras=0.0;
-    $num_days=$endDate1-$startDate1;
+	$time1 = new DateTime($startDate1);
+	$time2 = new DateTime($endDate1);
+   $interval = $time1->diff($time2);
+ $interval->format('%R%a');
+    //
+	
+	$num_days=$interval;
 
     $rental_fee=$car_price*$num_days;
 
@@ -77,24 +76,7 @@ Recommended Extras
        </form> 
         </div>
          <?php
-/*    
-	   function IsChecked($chkname,$value)
-    {
-        if(!empty($_POST[$chkname]))
-        {
-            foreach($_POST[$chkname] as $chkval)
-            {
-                if($chkval == $value)
-                {
-                    return true;
-                }
-            }
-        
-            return false;
-         }
-      /
-    }
-	*/
+
     if(!empty($_POST["childSeat"])){
           $extras+=20;
 		       
@@ -165,7 +147,7 @@ echo "
 <tr>
 Number of days: $num_days 
 <br>
-Price/day: $ $car_price
+Price/day: $ $type_of_car
 </tr>
 <tr><br>
 
