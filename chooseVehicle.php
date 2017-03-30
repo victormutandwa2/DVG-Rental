@@ -9,20 +9,22 @@ and open the template in the editor.
 include 'sqlSetup.php';
 //
 ////$branch = $_POST['branchID'];
-    $branchLoc = $_POST["branchPickup"];
+//    $branchLoc = $_POST["branchPickup"];
     
-    $branchQ = mysqli_query($link, "SELECT branchID FROM branch WHERE streetaddress='$branchLoc'");
-    while ($id = $branchQ) {
-        $branch = $id;
-    }
-    
+//    $branchQ = mysqli_query($link, "SELECT branchID FROM branch WHERE streetaddress='$branchLoc'");
+//    while ($id = $branchQ) {
+//        $branch = $id;
+//    }
+    $branch =1;
+    $city = $_POST['city'];
+    print_r($city);
     
     $startDate = $_POST["startDate"];
     $endDate = $_POST["endDate"];
     print_r($branch);
     "<br>";
     print_r($endDate);
-    //    $type = "sedan";
+        $type = "sedan";
 ?>
 
 <html>
@@ -32,7 +34,9 @@ include 'sqlSetup.php';
           <meta name="viewport" content="width=device-width, initial-scale=1">
          <link rel="stylesheet" type="text/css" href="css/theme.css" />
          <link rel="stylesheet" type="text/css" href="css/chooseVehicle.css"/>
-<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
+                               <script type="text/javascript" src="javascript/backgroundSlide.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     </head>
     
     <body>
@@ -41,7 +45,7 @@ include 'sqlSetup.php';
         
         <div id="bar">
 			<span class="header"><a href="index.php"><img src=img/logo.jpg alt="Logo" height="70"></a></span>
-                        <span class="right"><a href="#NOTHING">Contact Us</a></span>
+                        <span class="right"><a href="contact.php">Contact Us</a></span>
 			   <span class ="right"><a href="index.php">Home</a></span>
 
 	</div>
@@ -59,7 +63,7 @@ include 'sqlSetup.php';
             </div>-->
         
         
-<!--            
+            
  <script type="text/javascript">
    function showCarType() 
     {
@@ -96,7 +100,7 @@ include 'sqlSetup.php';
          <?php 
                 
             if ($_GET['type'] == "" || $_GET['type'] == "All") {                                      
-                $carQuery = mysqli_query($link,"SELECT model, type,year, img,ppd FROM cars WHERE branch='$branch'");
+                $carQuery = mysqli_query($link,"SELECT model, type,year, img,ppd FROM cars WHERE branchID='$branch'");
             }
             else {
                 $type = $_GET['type'];
@@ -115,8 +119,7 @@ include 'sqlSetup.php';
                      <form method="POST" action="Extras.php">
                       <input type="hidden" name="carID" value="carID">
 
-                    <td> <a href="Extras.php" name="carModel"> <?php echo $cars['model']; ?>  </a>
-                        
+                    <td> <a href="Extras.php" name="carModel"> <?php echo $cars['model']; ?>  </a>                        
                         <br><a name="year"> <?php echo $cars['year']; ?> </a> </br></td>
                     <td> <a name="type">   <?php echo $cars['type'];?> </a> </td>
                     <td> <a name="ppd"> $<?php echo $cars['ppd']; ?>/day </a> </td>                  

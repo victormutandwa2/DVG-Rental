@@ -13,6 +13,8 @@ author @Victor Mutandwa
 
 <link rel="stylesheet" type="text/css" href="css/theme.css"/>
 <link rel ="stylesheet" type="text/css" href="css/extras.css"/>
+                      <script type="text/javascript" src="javascript/backgroundSlide.js"></script>
+
 
 
 

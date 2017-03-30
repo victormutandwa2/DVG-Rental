@@ -25,10 +25,10 @@
 
 .btn {
 	background-color:#D1D0CE;
-    color:black;
+        color:black;
 	font-weight:bold;
-    font-size: 18px;
-    cursor: pointer;
+        font-size: 18px;
+        cursor: pointer;
 	width:195px;
 	height:40px;
 	text-align:center;
@@ -80,7 +80,6 @@
 	width:200px;
 	height:39px;
 	text-align:center;
-	margin-left:255px;
 	border:none;
 }
 
@@ -96,5 +95,5 @@
     margin-right: 5%;
     margin-bottom: 5%;
     border: 10px;
-    height: 800px;
+    height: 40px;
 }

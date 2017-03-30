@@ -4,6 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/theme.css" />
 		<link rel="stylesheet" type="text/css" href="css/contact.css" />
+                                      <script type="text/javascript" src="javascript/backgroundSlide.js"></script>
+
                 <style>
                     p{
                         text-align: center;

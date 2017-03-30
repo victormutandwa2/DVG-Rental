@@ -2,12 +2,11 @@
 
 
 var backgroundImages = new Array();
-backgroundImages[0] = "img/";
-backgroundImages[1] = "img/";
-backgroundImages[2] = "img/";
-backgroundImages[3] = "img/";
-backgroundImages[4] = "img/";
-backgroundImages[5] = "img/";
+backgroundImages[0] = "img/wallpaper1.jpg";
+backgroundImages[1] = "img/wallpaper2.jpg";
+backgroundImages[2] = "img/wallpaper3.jpg";
+backgroundImages[3] = "img/wallpaper4.jpg";
+backgroundImages[4] = "img/wallpaper5.jpg";
 
 var speed = 5000;	// interval between slide (in ms)
 
