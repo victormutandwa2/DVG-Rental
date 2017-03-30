@@ -30,7 +30,7 @@
                 <b>Telephone number:</b> +1 844 00000<br>  		
                  FAX number:&nbsp &nbsp &nbsp  +1 666 44777
 		<br>
-                <b> Email Us:</b> <a href="mailto:Reservation@DVG.com">DVG Rental Reservations</a>  
+              <b>Email Us:</b> <a href="mailto:Reservation@DVG.com">DVG Rental Reservations</a>  
                   <br>
                   <br>
                   <b>Other Branches:</b><br>

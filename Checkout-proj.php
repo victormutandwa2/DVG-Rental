@@ -157,28 +157,31 @@ Card Number:<br>
 </div>
 </div>
 <?php
-//session_start();
+session_start();
 include 'sqlSetup.php';
 
-//
-//$startDate1=$_SESSION["var4"];
-//$endDate1=$_SESSION["var5"];
-//
-//
-//$num_days=$endDate1-$startDate1;
+    $startDate1=$_POST["var1"];
+    $endDate1=$_POST["var2"];
+   
+     $car_price=0.0;
+		$type_of_car=$_POST["var3"];
+    
+if ($type_of_car == "Sedan"){
+	$car_price=20;
+}
+ 	else if($type_of_car=="HatchBack"){
+		$car_price=15;
+	}
+	else if($type_of_car=="SUV"){
+		$car_price=25;
+	}
+	
 
-    $startDate1=$_SESSION["var4"];
-    $endDate1=$_SESSION["var5"];
 
-    $type_of_car=$_SESSION["var6"];
 
     $num_days=$endDate1-$startDate1;
 
-    $rental_fee=$type_of_car*$num_days;
-
-
-
-
+    $rental_fee=$car_price*$num_days;
 
 $before_tax=$extras+$rental_fee;
 $taxes=$extras*0.15+$rental_fee*0.15;
@@ -191,7 +194,7 @@ echo "
 <tr>
 Number of days:$num_days 
 <br>
-Price/day: $ $type_of_car 
+Price/day: $ $car_price
 </tr>
 <tr><br>
 

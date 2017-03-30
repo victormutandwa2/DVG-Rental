@@ -72,11 +72,32 @@
 						
 						<td class="label">Pickup/Return:</td>
 						<td> <input id="startDateSelect" type="date" class="btn" name="startDate"/> </td>
-			
+			                   <!--
+									Start date PHP
+                                -->     
+										<?php
+										if(isset($_POST["submit"])){
+										$_SESSION["var5"]=$_POST["startDate"];
+	 
+										}
+ 
+										?>
+																
+								
 								<td> <input id="endDateSelect" type="date" class="btn" name="endDate"/> </td>
-										
-                                            <td>  <button id="submit" >SEARCH</button>  </td> 	
-
+									                                       	
+                                    <!--
+									END date PHP
+                                     
+									 -->     
+										<?php
+										if(isset($_POST["submit"])){
+										$_SESSION["var6"]=$_POST["endDate"];
+	 
+										}
+ 
+										?>
+									<td>  <button name="submit" id="submit" >SEARCH</button>  </td>
 					</tr>
 				</table>
  

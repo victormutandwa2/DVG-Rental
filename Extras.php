@@ -40,16 +40,28 @@ Recommended Extras
  
       <?php
 
-    include 'sqlSetup.php';
+	  include 'sqlSetup.php';
 
-    $startDate1=$_POST["var4"];
-    $endDate1=$_POST["var5"];
-    print 'startDate1';
-   // $type_of_car=$_POST["var6"];
-
+    $startDate1=$_POST["startDate"];
+    $endDate1=$_POST["endDate"];
+   
+     $car_price=0.0;
+		$type_of_car=$_POST["var3"];
+		
+if ($type_of_car == "Sedan"){
+	$car_price=20;
+}
+ 	else if($type_of_car=="HatchBack"){
+		$car_price=15;
+	}
+	else if($type_of_car=="SUV"){
+		$car_price=25;
+	}
+	
+	$extras=0.0;
     $num_days=$endDate1-$startDate1;
 
-    $rental_fee=$type_of_car*$num_days;
+    $rental_fee=$car_price*$num_days;
 
 
 
@@ -61,8 +73,11 @@ Recommended Extras
 <img src="img/childSeat.jpg" alt="childSeat" width="200" height="220" style="margin-left: 5%; margin-top: 5%;">     </div>
 <div class="twoColumn"> <br><br><br>
         <p> Ensure your trip is smooth by including a GPS system in your vehicle for $20 per day. <br> </p>
-             <input type="checkbox" id="check" name="childSeat" value="childSeat" ></p>
-    </div>
+   
+        <form action="Checkout-proj.php" method="POST" >
+        <input type="checkbox" id="check" name="childSeat" value="childSeat" ></p>
+       </form> 
+        </div>
          <?php
              function IsChecked($chkname,$value)
     {
@@ -80,21 +95,24 @@ Recommended Extras
          }
       
     }
-    if(IsChecked('childSeat','childSeat'))
-    {
-     $extras+=20;
-    }
-    else{
-        $extras+=0;
-}
-         
-         ?>
+    if(isset($_POST["childSeat"])){
+          $extras+=20;
+        }
+       else{
+              $extras+=0;
+            echo" Testing";
+        }
+            
+            ?>
           <div class="twoColumn">
 <img src="img/insurance.jpg" alt="insurance" width="200" height="220" align="middle" style="margin-left: 5%; margin-top:5%;">     </div>
     <div class="twoColumn"> <br><br><br>
         <p> Ensure your trip is smooth by including a GPS system in your vehicle for $20 per day. <br> </p>
-             <input type="checkbox" id="check" name="insurance" value="insurance"></p>
-            <?php
+               
+        <form action="Checkout-proj.php" method="POST" > 
+         <input type="checkbox" id="check" name="insurance" value="insurance"></p>
+         <form>
+             <?php
      
     if(IsChecked('insurance','insurance'))
     {
@@ -111,21 +129,25 @@ Recommended Extras
 <img src="img/gps.jpg" alt="gps" width="200" height="220" align="middle" style="margin-left: 5%; margin-top:5%;">      </div>
     <div class="twoColumn"> <br><br><br>
         <p> Ensure your trip is smooth by including a GPS system in your vehicle for $20 per day. <br> </p>
-<input type="checkbox" id="check" name="navigation" value="navigation">    </div>
-          <?php
-     
-    if(IsChecked('navigation','navigation'))
-    {
-     $extras+=20;
-    }
-    else{
-        $extras+=0;
-    }
-    
-    ?>
 
+        <form action="Checkout-proj.php" method="POST" >
+        <input type="checkbox" id="check" name="navigation" value="navigation">    </div>
+          </form>
+         
     </div>
-    
+          <?php
+    if(isset($_POST["navigation"])){
+          $extras+=20;
+     	 
+          }
+       else{
+              $extras+=0;
+
+        }
+             
+                  
+          ?>
+         
     </form>
 <?php
 
@@ -140,7 +162,7 @@ echo "
 <tr>
 Number of days: $num_days 
 <br>
-Price/day: $ $type_of_car; 
+Price/day: $ $car_price
 </tr>
 <tr><br>
 

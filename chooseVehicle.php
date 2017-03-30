@@ -99,7 +99,7 @@ include 'sqlSetup.php';
             </div>          
          <?php 
                 
-            if ($_GET['type'] == "" || $_GET['type'] == "All") {                                      
+				if ($_GET['type'] == "" || $_GET['type'] == "All") {                                      
                 $carQuery = mysqli_query($link,"SELECT model, type,year, img,ppd FROM cars WHERE branchID='$branch'");
             }
             else {
@@ -115,10 +115,8 @@ include 'sqlSetup.php';
             
             <table>
                <?php foreach ($carQuery as $cars): ?>
-                 
+                            <form method="POST" action="Extras.php">
                 <tr class = "carBox" onclick="document.location='Extras.php';">
-                     <form method="POST" action="Extras.php">
-                      <input type="hidden" name="carID" value="carID">       </input>
 
 <<<<<<< HEAD
                     <td> <input href="Extras.php" name="carModel" value="<?php echo $cars['model']; ?>" readonly>  </input>
@@ -158,6 +156,9 @@ include 'sqlSetup.php';
         <?php
         // put your code her
         // 
-        ?>
+			if(isset($_POST["type"])){
+		   $_SESSION["var3"]=$_POST["type"];
+			}
+	   ?>
     </body>
 </html>
