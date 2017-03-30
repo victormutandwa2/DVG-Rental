@@ -50,7 +50,7 @@
         
 		<div id="box" >
 
-			<form  method="POST" action="chooseVehicle.php?type=All">
+			<form  method="GET" action="chooseVehicle.php">
 				<div class="menuBar" >
 				<table>
 					<tr>
@@ -71,7 +71,7 @@
 
 						
 						<td class="label">Pickup/Return:</td>
-						<td> <input id="startDateSelect" type="date" class="btn" name="startDate"/> </td>
+						<td> <input id="startDateSelect" type="date" class="btn" value="2017-03-30" name="startDate"/> </td>
 			                   <!--
 									Start date PHP
                                 -->     
@@ -84,7 +84,7 @@
 										?>
 																
 								
-								<td> <input id="endDateSelect" type="date" class="btn" name="endDate"/> </td>
+								<td> <input id="endDateSelect" type="date" class="btn" value="2017-03-30" name="endDate"/> </td>
 									                                       	
                                     <!--
 									END date PHP
@@ -97,6 +97,7 @@
 										}
  
 										?>
+									<input type="hidden" name="type" value="All" />
 									<td>  <button name="submit" id="submit" >SEARCH</button>  </td>
 					</tr>
 				</table>

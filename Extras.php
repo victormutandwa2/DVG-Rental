@@ -50,14 +50,12 @@ Recommended Extras
 
 	
 	$extras=0.0;
-	$time1 = new DateTime($startDate1);
-	$time2 = new DateTime($endDate1);
-   $interval = $time1->diff($time2);
- $interval->format('%R%a');
-    //
-	
-	$num_days=$interval;
+ 
+	$num_days=$startDate1-$endDate1;
+	echo $num_days;
 
+
+	
     $rental_fee=$car_price*$num_days;
 
 
