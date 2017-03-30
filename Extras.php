@@ -41,7 +41,7 @@ Recommended Extras
       <?php
 
 	  include 'sqlSetup.php';
-
+		session_start();
            $startDate1=new DateTime($_POST["startDate"]);
            $endDate1=new DateTime($_POST["endDate"]);
 	
@@ -50,11 +50,11 @@ Recommended Extras
 
 	
 		$num_days = $endDate1->diff($startDate1)->format("%a") + 1;
-		echo $num_days;
+	
 		
 		$_SESSION["num_days"]=$num_days;
-	
-	$extras=0.0;
+        $_SESSION["type_of_car"]=$type_of_car;	
+		$extras=0.0;
  
 
 

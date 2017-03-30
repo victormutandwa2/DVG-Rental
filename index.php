@@ -50,7 +50,7 @@
         
 		<div id="box" >
 
-			<form  method="GET" action="chooseVehicle.php">
+			<form  method="POST" action="chooseVehicle.php?type=All">
 				<div class="menuBar" >
 				<table>
 					<tr>
@@ -71,20 +71,20 @@
 
 						
 						<td class="label">Pickup/Return:</td>
-						<td> <input id="startDateSelect" type="date" class="btn" value="2017-03-30" name="startDate"/> </td>
+						<td> <input id="startDateSelect" type="date" class="btn" name="startDate"/> </td>
 			                   <!--
 									Start date PHP
                                 -->     
 										<?php
 										if(isset($_POST["submit"])){
-										$_SESSION["var5"]=$_POST["startDate"];
+										$_SESSION["var1"]=$_POST["startDate"];
 	 
 										}
  
 										?>
 																
 								
-								<td> <input id="endDateSelect" type="date" class="btn" value="2017-03-30" name="endDate"/> </td>
+								<td> <input id="endDateSelect" type="date" class="btn" name="endDate"/> </td>
 									                                       	
                                     <!--
 									END date PHP
@@ -92,12 +92,11 @@
 									 -->     
 										<?php
 										if(isset($_POST["submit"])){
-										$_SESSION["var6"]=$_POST["endDate"];
+										$_SESSION["var2"]=$_POST["endDate"];
 	 
 										}
  
 										?>
-									<input type="hidden" name="type" value="All" />
 									<td>  <button name="submit" id="submit" >SEARCH</button>  </td>
 					</tr>
 				</table>

@@ -177,37 +177,15 @@ Card Number:<br>
           
 
 <?php
-session_start();
+
 include 'sqlSetup.php';
+session_start();
 
-    $startDate1=$_POST["startDate"];
-    $endDate1=$_POST["endDate"];
-   
-<<<<<<< HEAD
-     
-		$type_of_car=$_POST["ppd"];
-
-=======
-     $car_price=0.0;
-		$type_of_car=$_POST["var3"];
-    
-if ($type_of_car == "Sedan"){
-	$car_price=20;
-}
- 	else if($type_of_car=="HatchBack"){
-		$car_price=15;
-	}
-	else if($type_of_car=="SUV"){
-		$car_price=25;
-	}
->>>>>>> 24b96cff9eb79783293b7892240506510c44abcc
+   $num_days=$_SESSION["num_days"];
+    $type_of_car=$_SESSION["type_of_car"];
 	
-
-
-
-   $num_days=$endDate1-$startDate1;
-
-    $rental_fee=$car_price*$num_days;
+    $rental_fee=$type_of_car*$num_days;
+	$extras=0;	
 $before_tax=$extras+$rental_fee;
 $taxes=$extras*0.15+$rental_fee*0.15;
 $total_tax=$before_tax*1.15;
@@ -222,17 +200,13 @@ Number of days:$num_days
 Price/day: $ $type_of_car
 </tr>
 <tr><br>
-
-Extras: $ $extras
-</tr>
-<tr><br>
 Taxes(15%): $ $taxes <br>
 <b>________________________</b>	
 </tr>
 <tr><br><b>TOTAL: $ $total_tax  </b></tr>
 </table>
 </div>
-"
+";
 ?>
 
 

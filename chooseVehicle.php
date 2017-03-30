@@ -53,11 +53,6 @@ include 'sqlSetup.php';
             
         </div>
            
-<!--              <div id="summary">          
-                  <a> Rental Summary </a>
-                  <li> </li>
-                  
-            </div>-->
         
         
             
