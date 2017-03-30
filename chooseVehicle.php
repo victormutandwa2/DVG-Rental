@@ -108,23 +108,24 @@ include 'sqlSetup.php';
          
         
             
+            
             <table>
                <?php foreach ($carQuery as $cars): ?>
                  
                 <tr class = "carBox" onclick="document.location='Extras.php';">
                      <form method="POST" action="Extras.php">
-                      <input type="hidden" name="carID" value="carID">
+                      <input type="hidden" name="carID" value="carID">       </input>
 
-                    <td> <a href="Extras.php" name="carModel"> <?php echo $cars['model']; ?>  </a>
+                    <td> <input href="Extras.php" name="carModel" value="<?php echo $cars['model']; ?>" readonly>  </input>
                         
-                        <br><a name="year"> <?php echo $cars['year']; ?> </a> </br></td>
-                    <td> <a name="type">   <?php echo $cars['type'];?> </a> </td>
-                    <td> <a name="ppd"> $<?php echo $cars['ppd']; ?>/day </a> </td>                  
+                        <br><input name="year" value="<?php echo $cars['year'];?>" readonly> </input> </br></td>
+                    <td> <input name="type" value="<?php echo $cars['type'];?>" readonly> </input> </td>
+                    <td> <input name="ppd" value="$".<?php echo $cars['ppd']; ?>."/day" readonly> </input> </td>                  
                     
                     <td>    
                             <img type="image" src="<?php echo $cars['img']; ?>" height="150" width ="200"> 
                      </td>
-                     </input>
+
                      </form>
                  
                 </tr>
