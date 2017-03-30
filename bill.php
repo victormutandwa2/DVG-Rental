@@ -31,6 +31,7 @@ div.done{
 </style>
 </head>
 <body>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
  <div id="bar">
 <span class="header"><a href="index.php"><img src="img/logo.jpg" alt="Logo" height="70"></a></span>
 						<span class="right"><a href="contact.php">Contact Us</a></span>
