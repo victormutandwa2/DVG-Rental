@@ -9,8 +9,7 @@
 		$city[] = $cityrow["city"];
 	}
 		
-	$js_cities = json_encode($city);
-	print_r($js_cities);
+        
 ?>
 
 <html>
@@ -19,26 +18,29 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/theme.css" />
 		<link rel="stylesheet" type="text/css" href="css/homePage.css" />
-                <script type="text/javascript" src="javascript/homePage.js">            
-                               </script>
-                
+                      <script type="text/javascript" src="javascript/backgroundSlide.js"></script>
+                <script type="text/javascript" src="javascript/homePage.js">      
+                                            </script>
+                                            
+       
                 <script type="text/javascript">
                 var cities = <?php echo json_encode($city); ?>;
                 for (var i = 0; i < cities.length; i++) {
                     push(cities[i]);
                 }
                 document.getElementById("btnCity") = cities[0];
-                
+               
                 </script>
                 
+
+                        
 	</head>
 	
 	<body>
 
 	<div id="bar">
 			<span class="header"><a href="index.php"><img src=img/logo.jpg alt="Logo" height="70"></a></span>
-                        <span class="right"><a href="#NOTHING">Contact Us</a></span>
-			<span class="right"><a href="#NOTHING">Home</a></span>
+                        <span class="right"><a href="contact.php">Contact Us</a></span>
 			
 
 	</div>
@@ -47,13 +49,8 @@
 		</div>
         
 		<div id="box" >
-		
-                    
 
-                    
-                    
-  
-			<form action="chooseVehicle.php?type=All" method="POST">
+			<form  method="POST" action="chooseVehicle.php?type=All">
 				<div class="menuBar" >
 				<table>
 					<tr>
@@ -71,27 +68,26 @@
 							</div>
 						</div>
 						</td>
-						<td> 			 
-						<div class="dropdown">
-							<input class="btn" id="btnBranch" name="branch" readOnly/>
-							<div class="list" id="branchList">
 
-							</div>
-						</div>
-						</td>
 						
 						<td class="label">Pickup/Return:</td>
 						<td> <input id="startDateSelect" type="date" class="btn" name="startDate"/> </td>
 			
 								<td> <input id="endDateSelect" type="date" class="btn" name="endDate"/> </td>
-				
-				
-						
-						<td colspan=2> <input type="submit" value="Search" id="submit" name="submit"/> </td> 	
+										
+                                            <td>  <button id="submit" >SEARCH</button>  </td> 	
+
 					</tr>
 				</table>
+ 
+                   
 				</div>
 			</form>	
 		</div>
+                
+                 
+                   
+                
+           
 		</body>
 </html>

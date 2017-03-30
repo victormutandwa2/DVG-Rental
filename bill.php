@@ -17,25 +17,28 @@ div.gap1{
     background-color : maroon;
 }
 
-img{
-	margin-left:5%;
-	 border-radius: 8px;
+.pic {
+    margin-left:5%;
 }
-div.body1{margin-left:5%;}
+
+div.body1{
+    margin-left:5%;
+}
 
 div.done{
-    margin-left:70%;
+    margin-left:10%;
 
  }
 	
 </style>
 </head>
 <body>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
  <div id="bar">
-<span class="header"><a href="index.php"><img src="img/logo.jpg" alt="Logo" height="70"></a></span>
-						<span class="right"><a href="#NOTHING">Contact Us</a></span>
-						<span class="right"><a href="#NOTHING">Vehicles</a></span>								
+						<span class="right"><a href="contact.php">Contact Us</a></span>														
 						<span class ="right"><a href="index.php">Home</a></span>
+                 <span class="header"><a href="index.php"><img src=img/logo.jpg alt="Logo" height="70"></a></span>
+
 </div>
 
 <div class="gap1">
@@ -43,7 +46,7 @@ Summary:
 </div>
 
 <p>
-<img src="img/city.jpg" height="200" width="1200" border="3" color="grey">
+<img class="pic" src="img/city.jpg" height="200" width="90%" border="3" color="grey">
 </p>
 <div class="body1">
 <p>
@@ -57,7 +60,7 @@ We hope you enjoy doing business with us and will see you soon!
  
  
  <div class="done">
-<img src="done2.jpg" height="100" width="100">
+<img  src="img/done2.jpg" height="100" width="100">
 
 </div>
 </p>
