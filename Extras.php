@@ -42,21 +42,25 @@ Recommended Extras
 
 	  include 'sqlSetup.php';
 
-           $startDate1=$_POST["startDate"];
-           $endDate1=$_POST["endDate"];
+           $startDate1=new DateTime($_POST["startDate"]);
+           $endDate1=new DateTime($_POST["endDate"]);
 	
 	   
 		$type_of_car=$_POST["ppd"];
 
 	
+		$num_days = $endDate1->diff($startDate1)->format("%a") + 1;
+		echo $num_days;
+		
+		$_SESSION["num_days"]=$num_days;
+	
 	$extras=0.0;
  
-	$num_days=$startDate1-$endDate1;
-	echo $num_days;
+
 
 
 	
-    $rental_fee=$car_price*$num_days;
+    $rental_fee=$type_of_car*$num_days;
 
 
 
