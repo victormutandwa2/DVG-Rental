@@ -59,7 +59,7 @@ table {
 }
 
 #cars {
-    background-color: threeddarkshadow;
+
 /*    opacity : 0.8;*/
     margin-left: 5%;
     margin-bottom: 5%;
@@ -83,18 +83,14 @@ table {
 }
 
 
-.carBox{
-        background-color:#D1D0CE;
+.carBox {
+    background-color:#D1D0CE;
 	color:black;
 	font-weight:bold;
-        font-size: 16px;
-	
+    font-size: 16px;
 	text-align:center;
-        cursor: pointer;
-        height:100px;
-  
-      
-      
+    cursor: pointer;
+    height:100px;  
 }
 
 .carBox td {
@@ -102,11 +98,14 @@ table {
 	height:150px;
 }
 
-.carBox:hover {
-     background-color : rgba(255,255,255,0.5);
-        color : white;
+.info {
+	text-decoration: none;
+	color : maroon ;
+	font-weight: bold;
+	border:none;
+	background-color:transparent;
+	text-align:center;
 }
-
 
 
 a{
@@ -120,12 +119,6 @@ a:hover{
 }
 
 
-input{
-	text-decoration: none;
-	color : maroon ;
-	font-weight: bold;
-}
-
 input:hover{
 	color: maroon;
 }
@@ -133,8 +126,6 @@ input:hover{
 #signup{
 	text-align: center;
 }
-
-
 
 .title{
   font-weight: bold;

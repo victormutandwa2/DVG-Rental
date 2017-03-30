@@ -177,14 +177,15 @@ Card Number:<br>
           
 
 <?php
-session_start();
+
+
 include 'sqlSetup.php';
 
     $startDate1=$_POST["var1"];
     $endDate1=$_POST["var2"];
    
-     $car_price=0.0;
-		$type_of_car=$_POST["var3"];
+     
+$type_of_car=$_SESSION["var3"];
     
 if ($type_of_car == "Sedan"){
 	$car_price=20;
@@ -194,6 +195,7 @@ if ($type_of_car == "Sedan"){
 	}
 	else if($type_of_car=="SUV"){
 		$car_price=25;
+		print $car_price;
 	}
 	
 
