@@ -42,19 +42,17 @@ Recommended Extras
 
 	  include 'sqlSetup.php';
 
-    $startDate1=$_POST["startDate"];
-    $endDate1=$_POST["endDate"];
-   
-     $car_price=0.0;
-		$type_of_car=$_POST["var3"];
+
+     
+		$type_of_car=$_SESSION["var3"];
 		
-if ($type_of_car == "Sedan"){
-	$car_price=20;
-}
- 	else if($type_of_car=="HatchBack"){
-		$car_price=15;
+		if ($type_of_car == "Sedan"){
+		$car_price=20;
 	}
-	else if($type_of_car=="SUV"){
+		else if($type_of_car=="HatchBack"){
+		$car_price=15;
+		}
+		else if($type_of_car=="SUV"){
 		$car_price=25;
 	}
 	
@@ -79,7 +77,8 @@ if ($type_of_car == "Sedan"){
        </form> 
         </div>
          <?php
-             function IsChecked($chkname,$value)
+/*    
+	   function IsChecked($chkname,$value)
     {
         if(!empty($_POST[$chkname]))
         {
@@ -93,14 +92,16 @@ if ($type_of_car == "Sedan"){
         
             return false;
          }
-      
+      /
     }
-    if(isset($_POST["childSeat"])){
+	*/
+    if(!empty($_POST["childSeat"])){
           $extras+=20;
-        }
+		       
+	   }
        else{
               $extras+=0;
-            echo" Testing";
+		
         }
             
             ?>
@@ -111,12 +112,14 @@ if ($type_of_car == "Sedan"){
                
         <form action="Checkout-proj.php" method="POST" > 
          <input type="checkbox" id="check" name="insurance" value="insurance"></p>
-         <form>
+         </form>
              <?php
      
-    if(IsChecked('insurance','insurance'))
+    if(!empty($_POST["insurance"]))
     {
      $extras+=20;
+	 
+	 
     }
     else{
         $extras+=0;
@@ -136,7 +139,7 @@ if ($type_of_car == "Sedan"){
          
     </div>
           <?php
-    if(isset($_POST["navigation"])){
+    if(!empty($_POST["navigation"])){
           $extras+=20;
      	 
           }
