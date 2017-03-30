@@ -53,7 +53,9 @@ Summary:
 <p>
 <br><b>Order confirmed!</b><br>
 <br>
-Your Confirmation reference No.is <b>00015</b><br>
+Your Confirmation reference No.is <b><?php session_start(); echo $_SESSION['resID']; 
+        session_destroy();
+        ?></b><br>
 <br>
 A copy of the booking has been sent to your email<br> 
 
