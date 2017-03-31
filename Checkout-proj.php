@@ -112,7 +112,7 @@ div.bar1.a:active {
 </div>
 
     <div class="box">
-        <form method="POST">
+        <form method="POST" action="bill.php">
 
 <div class="two">
 <h2>1.Driver Details:</h2>

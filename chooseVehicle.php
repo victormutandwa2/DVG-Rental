@@ -8,19 +8,13 @@ and open the template in the editor.
 //
 include 'sqlSetup.php';
 //
-////$branch = $_POST['branch_ID'];
-//    $branchLoc = $_POST["branchPickup"];
+	 $city = $_GET['city'];
     
-//    $branchQ = mysqli_query($link, "SELECT branchID FROM branch WHERE streetaddress='$branchLoc'");
-//    while ($id = $branchQ) {
-//        $branch = $id;
-//    }
-    $branch =1;
-
-
-	
-
-        $type = "sedan";
+    $branchQ = mysqli_query($link, "SELECT branch_ID FROM branch WHERE city='$city'");
+    while ($id = mysqli_fetch_assoc($branchQ)) {
+        $branch = $id['branch_id'];
+    }
+    
 ?>
 
 <html>
