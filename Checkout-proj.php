@@ -55,7 +55,7 @@ div.gap1 {
     background-color : maroon;
 }
 
-#Book {
+#button {
 	background-color: #666;
         color:white;
         text-decoration : none;
@@ -70,7 +70,7 @@ div.gap1 {
 	right:110px;
 }
 
-#Book:hover {
+#button:hover {
         background-color: maroon;
         color:white;
 	transition-duration: 0.5s;
@@ -91,11 +91,10 @@ div.bar1.a:active {
  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/theme.css">
 <link rel="stylesheet" type="text/css" href="css/chooseVehicle.css">
-  
-    <script src="javascript/backgroundSlide.js"></script>
-    <script src="javascript/save.js"></script>
+   <script type="text/javascript" src="javascript/save.js"></script>
 
-    
+                      <script type="text/javascript" src="javascript/backgroundSlide.js"></script>
+
 </head>
 <body>
 <div id="bar">
@@ -110,10 +109,9 @@ div.bar1.a:active {
 <div class="gap1">
 		Enter Your Information
 </div>
+<form action="bill.php" method="POST">
 
     <div class="box">
-        <form method="POST" action="bill.php">
-
 <div class="two">
 <h2>1.Driver Details:</h2>
 
@@ -161,13 +159,16 @@ Card Number:<br>
 <br>
 <br>
 
+</div>
+</div>
+    <input id="button" type="submit" value="Book" > 
+     </form>
+    <div>
+         
+<p>
 
-</div>
-            
-             <input id="Book" name="Book" type="submit">
-                      </form>
-</div>
-    
+
+</p>
 
 </div>
 <br>
@@ -180,37 +181,11 @@ Card Number:<br>
 include 'sqlSetup.php';
 session_start();
 
-<<<<<<< HEAD
    $num_days=$_SESSION["num_days"];
     $type_of_car=$_SESSION["type_of_car"];
 	
     $rental_fee=$type_of_car*$num_days;
 	$extras=0;	
-=======
-    $startDate1=$_POST["var1"];
-    $endDate1=$_POST["var2"];
-   
-     $car_price=0.0;
-		$type_of_car=$_POST["var3"];
-    
-if ($type_of_car == "Sedan"){
-	$car_price=20;
-}
- 	else if($type_of_car=="HatchBack"){
-		$car_price=15;
-	}
-	else if($type_of_car=="SUV"){
-		$car_price=25;
-	}
-	
-
-
-
-    $num_days=$endDate1-$startDate1;
-
-    $rental_fee=$car_price*$num_days;
-
->>>>>>> 35605f8eed5e6212a3a48a0d6f1849e01866289e
 $before_tax=$extras+$rental_fee;
 $taxes=$extras*0.15+$rental_fee*0.15;
 $total_tax=$before_tax*1.15;
@@ -222,7 +197,7 @@ echo "
 <tr>
 Number of days:$num_days 
 <br>
-Price/day: $ $car_price
+Price/day: $ $type_of_car
 </tr>
 <tr><br>
 Taxes(15%): $ $taxes <br>
@@ -238,6 +213,8 @@ Taxes(15%): $ $taxes <br>
 <div id="bar1">
 
 </div>
+
+
 
 </body>
 </html>

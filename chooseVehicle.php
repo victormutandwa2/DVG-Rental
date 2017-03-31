@@ -8,13 +8,16 @@ and open the template in the editor.
 //
 include 'sqlSetup.php';
 //
-	 $city = $_GET['city'];
+$city = $_GET['city'];
     
     $branchQ = mysqli_query($link, "SELECT branch_ID FROM branch WHERE city='$city'");
     while ($id = mysqli_fetch_assoc($branchQ)) {
         $branch = $id['branch_id'];
     }
-    
+  
+
+
+	
 ?>
 
 <html>

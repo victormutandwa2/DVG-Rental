@@ -42,8 +42,7 @@ Recommended Extras
 
 	  include 'sqlSetup.php';
 		session_start();
-
-			date_default_timezone_set('US/Central');
+		date_default_timezone_set('US/Central');
            $startDate1=new DateTime($_POST["startDate"]);
            $endDate1=new DateTime($_POST["endDate"]);
 	
